@@ -13,3 +13,45 @@
  *= require_tree .
  *= require_self
  */
+
+ .container{
+ 		padding-left: 0 !important;
+ 		padding-right: 0 !important;
+		margin-left:0 !important;
+		margin-right:0 !important;
+ }
+
+#intro-section{
+	height:100%;
+
+	vertical-align: middle;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 35%;
+}
+
+.btn-primary{
+	background-color: #fff;
+    color: #2094fc;
+    border-color: #2094fc;
+}
+
+.btn-primary:hover{
+	background-color: #2094fc;
+    color: #fff;
+    border-color: #2094fc;
+}
+
+
+#logo{
+	height:150px;
+}
+
+#bg-left{
+	height:100%;
+width:400px;
+}
+
+
+*= require bootstrap

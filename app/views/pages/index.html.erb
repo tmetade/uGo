@@ -1,21 +1,33 @@
 <% content_for :top_content do %>
-  <div class="jumbotron">
     <div class="container">
-      <h1>Welcome!</h1>
-      <p>Register to get started.</p>
-      <p>
-        <%= link_to 'Register', new_user_registration_path, class: 'btn btn-primary btn-lg' %>
 
-        <% if user_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-  </li>
-<% else %>
-  <li>
-  <%= link_to('Login', new_user_session_path)  %>  
-  </li>
-<% end %>
-      </p>
+      <div class="row-fluid">
+
+          <div id="intro-section">
+
+            <%= image_tag "logo.png", id:"logo" %>
+
+
+
+            <p>
+              <%= link_to 'Register', new_user_registration_path, class: 'btn btn-primary' %>
+
+              <% if user_signed_in? %>
+
+                
+                <%= link_to'Logout', destroy_user_session_path, :method => :delete, class: 'btn btn-primary'  %>        
+                
+
+              <% else %>
+
+                <%= link_to'Login', new_user_session_path, class: 'btn btn-primary btn'   %>  
+
+
+              <% end %>
+
+            </p>
+
+          </div>
+      </div>
     </div>
-  </div>
 <% end %>
