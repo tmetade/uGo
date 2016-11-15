@@ -5,7 +5,9 @@
         <%= link_to root_path do %>
           <%= image_tag "header.png", id:"header-logo" %>
         <% end %>        
-        
+
+
+    
         <div class="header-link">
         <%= render "devise/shared/links" %>
         </div>
@@ -21,8 +23,7 @@
     <div class="sign-up">
 
 
-
-      <h2>Sign up</h2>
+      <h1 class="page-title">Sign up</h1>
 
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>

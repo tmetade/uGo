@@ -5,6 +5,8 @@
         <%= link_to root_path do %>
           <%= image_tag "header.png", id:"header-logo" %>
         <% end %>
+
+
         
         
         <div class="header-link">
@@ -19,14 +21,15 @@
 
   <div class="row-fluid">
 
-    <div class="sign-up">
+    <div class="log-in">
 
 
 
 
 
 
-      <h2>Log in</h2>
+      <h1 class="page-title">Log in</h1>
+
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field">
