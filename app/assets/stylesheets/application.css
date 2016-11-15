@@ -79,9 +79,12 @@ width:400px;
 
 .page-title{
 	text-align: center;
-
         font-size: 26px;
 
+}
+
+.splash-buttons{
+	margin-top:30px;
 }
 
 .sign-up, .log-in{
