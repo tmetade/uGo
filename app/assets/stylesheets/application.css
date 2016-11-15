@@ -48,10 +48,25 @@
 	height:150px;
 }
 
+#header-logo{
+	height: 65px;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
 #bg-left{
 	height:100%;
 width:400px;
 }
 
+.header{
+	border-bottom: #D3D3D3;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+.sign-up{
+	text-align:center;
+}
 
 *= require bootstrap
