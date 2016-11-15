@@ -1,8 +1,14 @@
 <div class="container">
   <div class="row-fluid">
     <div class="header">
-                    <%= image_tag "header.png", id:"header-logo" %>
 
+        <%= link_to root_path do %>
+          <%= image_tag "header.png", id:"header-logo" %>
+        <% end %>        
+        
+        <div class="header-link">
+        <%= render "devise/shared/links" %>
+        </div>
 
 
     </div>
@@ -45,7 +51,6 @@
         </div>
       <% end %>
       
-      <%= render "devise/shared/links" %>
 
 
     </div>
