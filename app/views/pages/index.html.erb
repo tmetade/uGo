@@ -9,12 +9,13 @@
 
 
 
-            <p>
+            <p class="splash-buttons">
               <%= link_to 'Register', new_user_registration_path, class: 'btn btn-primary' %>
 
               <% if user_signed_in? %>
 
-                
+                <!--TODO-->
+                <!--Replace link_to with partial-->
                 <%= link_to'Logout', destroy_user_session_path, :method => :delete, class: 'btn btn-primary'  %>        
                 
 
