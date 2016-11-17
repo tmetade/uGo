@@ -1,0 +1,2 @@
+class Requester < User
+end
