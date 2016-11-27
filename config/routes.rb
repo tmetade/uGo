@@ -3,11 +3,13 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'pages#index'
 
+    resources :application
   scope '/api' do
   	scope '/applications' do
   		get '/' => 'applications#index'
   		get '/new' => 'applications#new'
-  		post '/' => 'applications#create'
+  		post '/new' => 'applications#create'
+      get '/:id' => 'applications#show'
   	end
   end
 end
