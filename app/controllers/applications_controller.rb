@@ -25,7 +25,7 @@ class ApplicationsController < ApplicationController
   private
 
   def secure_params
-    params.require(:applications).permit( :application_number, :conference_name, :conference_date,
+    params.require(:application).permit( :application_number, :conference_name, :conference_date,
     	 :conference_location, :status, :registration_cost, :transportation_cost, :accomodation_cost,
     	:meals_cost)
   end

@@ -1,7 +1,3 @@
 class Application < ApplicationRecord
-	
-
-	attr_accessor :conference_name, :string
-
-	validates_presence_of :conference_name
+	validates :conference_name, presence: true
 end

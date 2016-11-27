@@ -1,4 +1,19 @@
-<%= form_for :applications do |f| %>
+<%= form_for :application do |f| %>
+
+<% if @application.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@application.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @application.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <p>
     <%= f.label :application_number %><br>
     <%= f.text_field :application_number %>
@@ -11,15 +26,11 @@
 
   <p>
     <%= f.label :conference_date %><br>
-    <%= f.text_area :conference_date %>
+    <%= f.date_field :conference_date %>
   </p>
   <p>
     <%= f.label :conference_location %><br>
     <%= f.text_area :conference_location %>
-  </p>
-  <p>
-    <%= f.label :status %><br>
-    <%= f.text_area :status %>
   </p>
   <p>
     <%= f.label :registration_cost %><br>
