@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       get '/:id' => 'applications#show'
   	end
 
-    resources :recommendations
+    resources :recommendation
     scope '/recommendation' do
       get '/' => 'recommendation#index'
       get '/new' => 'recommendation#new'
