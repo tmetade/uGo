@@ -1,3 +1,4 @@
+<%= devise_error_messages! %>
 <div class="container">
   <div class="row-fluid">
     <div class="header">
@@ -30,8 +31,55 @@
         <%= devise_error_messages! %>
 
         <div class="field">
+          <%= f.label :given_name %><br />
+          <%= f.text_field :given_name, autofocus: true %>
+        </div>
+
+        <div class="field">
+          <%= f.label :last_name %><br/>
+          <%= f.text_field :last_name, autofocus: true %>
+        </div>
+
+
+        <div class="field">
           <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true %>
+          <%= f.email_field :email %>
+        </div>
+
+        <div class="field">
+          <%= f.label :student_number %><br />
+          <%= f.text_field :student_number%>
+        </div>
+
+
+        <div class="field">
+         <%= f.label :bank_account_number %><br />
+         <%= f.text_field :bank_account_number%>
+        </div>
+
+        <div class="field">
+         <%= f.label :program_of_study %><br />
+         <%= f.text_field :program_of_study%>
+        </div>
+
+        <div class="field">
+         <%= f.label :thesis_topic %><br />
+         <%= f.text_field :thesis_topic%>
+        </div>
+
+        <div class="field">
+         <%= f.label :session_number %><br />
+         <%= f.text_field :session_number%>
+        </div>
+
+        <div class="field">
+         <%= f.label :supervisor %><br />
+         <%= f.text_field :supervisor%>
+        </div>
+
+        <div class="field">
+         <%= f.label :academic_unit %><br />
+         <%= f.text_field :academic_unit%>
         </div>
 
         <div class="field">
@@ -48,7 +96,7 @@
         </div>
 
         <div class="actions">
-          <%= f.submit "Sign up" %>
+          <%= f.submit "Sign up", class: 'btn btn-primary' %>
         </div>
       <% end %>
       

@@ -14,13 +14,14 @@
  *= require_self
  */
 
- .container{
- 		width:100%;
- 		padding-left: 0 !important;
- 		padding-right: 0 !important;
-		margin-left:0 !important;
-		margin-right:0 !important;
- }
+.container{
+		width:100%;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	margin-left:0 !important;
+	margin-right:0 !important;
+}
+
 
 #intro-section{
 	height:100%;
@@ -57,7 +58,7 @@
 
 #bg-left{
 	height:100%;
-width:400px;
+	width:400px;
 }
 
 .header{
@@ -78,19 +79,85 @@ width:400px;
 }
 
 .page-title{
-	text-align: center;
-        font-size: 26px;
-
+    font-size: 30px;
 }
+
+.col-title{
+    font-size:20px;
+}
+
+.col-title, .page-title{
+    text-align: center;
+    color: #2094fc;
+}
+
 
 .splash-buttons{
 	margin-top:30px;
 }
 
 .sign-up, .log-in{
-	margin-top:12%;
-		text-align:center;
-
+	margin-top:5%;
+    text-align:center;
 }
+
+/*flash*/
+.alert{
+    margin-bottom:0 !important;
+}
+
+.alert-error {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-alert {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: center;
+}
+
+.alert-notice {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: center;
+}
+
+/* Dashboard */
+
+.applications-container{
+    /*background-color: rgb(20, 40, 60);*/
+    height:500px;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: #D3D3D3;
+}
+
+
+.notifications-container{
+    /*background-color: rgb(40,20,30);*/
+    height:500px;
+}
+
+.notifications-container, .applications-container{
+    text-align: center;
+}
+
+
+
+
+
+
 
 *= require bootstrap

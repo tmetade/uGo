@@ -1,34 +1,53 @@
 <% content_for :top_content do %>
-    <div class="container">
-
-      <div class="row-fluid">
-
-          <div id="intro-section">
-
-            <%= image_tag "logo.png", id:"logo" %>
-
-
-
-            <p class="splash-buttons">
-              <%= link_to 'Register', new_user_registration_path, class: 'btn btn-primary' %>
 
               <% if user_signed_in? %>
 
-                <!--TODO-->
-                <!--Replace link_to with partial-->
-                <%= link_to'Logout', destroy_user_session_path, :method => :delete, class: 'btn btn-primary'  %>        
-                
+
+                  <div class="container">
+                    <div class="row-fluid">
+                      <div class="header">
+
+                          <%= link_to root_path do %>
+                            <%= image_tag "header.png", id:"header-logo" %>
+                          <% end %>        
+
+
+                      
+                          <div class="header-link">
+                                  <%= link_to'Logout', destroy_user_session_path, :method => :delete, class: 'btn btn-primary'  %>   
+                          </div>
+
+
+                      </div>
+                    </div>
+
+                    <div class="row-fluid">
+                      <h1 class="page-title">Dashboard</h1>
+                    </div>
+
+                    <div class="row">
+                      <!--Applications-->
+                      <div class="col-md-7 applications-container">
+                        <h2 class="col-title">Pending Applications</h2>
+
+                      </div>
+
+                      <!--Messages/Notifications-->
+                      <div class="col-md-5  notifications-container">
+                        <h2 class="col-title">Notifications</h2>
+
+
+                      </div>
+                    </div>
+                  </div>
+
+
+
 
               <% else %>
 
-                <%= link_to'Login', new_user_session_path, class: 'btn btn-primary btn'   %>  
-
+                <%= render "splash" %>
 
               <% end %>
 
-            </p>
-
-          </div>
-      </div>
-    </div>
 <% end %>
