@@ -5,7 +5,7 @@ class CreateApplications < ActiveRecord::Migration[5.0]
     	t.string :conference_name
     	t.date :conference_date
     	t.string :conference_location
-    	t.boolean :status
+    	t.int :status  # -1 = declined 0 = pending  1 = approved  
     	t.decimal :registration_cost
     	t.decimal :transportation_cost
     	t.decimal :accomodation_cost
