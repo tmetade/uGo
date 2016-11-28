@@ -1,0 +1,55 @@
+<%= form_for :application do |f| %>
+
+<% if @application.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@application.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @application.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :application_number %><br>
+    <%= f.text_field :application_number %>
+  </p>
+ 
+  <p>
+    <%= f.label :conference_name %><br>
+    <%= f.text_area :conference_name %>
+  </p>
+
+  <p>
+    <%= f.label :conference_date %><br>
+    <%= f.date_field :conference_date %>
+  </p>
+  <p>
+    <%= f.label :conference_location %><br>
+    <%= f.text_area :conference_location %>
+  </p>
+  <p>
+    <%= f.label :registration_cost %><br>
+    <%= f.text_area :registration_cost %>
+  </p>
+  <p>
+    <%= f.label :transportation_cost %><br>
+    <%= f.text_area :transportation_cost %>
+  </p>
+  <p>
+    <%= f.label :accomodation_cost %><br>
+    <%= f.text_area :accomodation_cost %>
+  </p>
+  <p>
+    <%= f.label :meals_cost %><br>
+    <%= f.text_area :meals_cost %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

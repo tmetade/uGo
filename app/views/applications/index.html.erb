@@ -1,0 +1,16 @@
+<h1>Listing articles</h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+ 
+  <% @application.each do |application| %>
+    <tr>
+      <td><%= application.conference_name %></td>
+      <td><%= application.status %></td>
+      <td><%= link_to 'Show', application_path(application) %></td>
+    </tr>
+  <% end %>
+</table>
