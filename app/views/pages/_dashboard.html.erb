@@ -1,0 +1,35 @@
+<div class="container">
+      <div class="row-fluid">
+        <div class="header">
+
+            <%= link_to root_path do %>
+              <%= image_tag "header.png", id:"header-logo" %>
+            <% end %>        
+
+
+        
+            <div class="header-link">
+                    <%= link_to'Logout', destroy_user_session_path, :method => :delete, class: 'btn btn-primary'  %>   
+            </div>
+
+
+        </div>
+      </div>
+
+
+
+      <div class="row">
+        <!--Applications-->
+        <div class="col-md-7 applications-container">
+          <h2 class="col-title">Pending Applications</h2>
+
+        </div>
+
+        <!--Messages/Notifications-->
+        <div class="col-md-5  notifications-container">
+          <h2 class="col-title">Notifications</h2>
+
+
+        </div>
+      </div>
+</div>
