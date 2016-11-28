@@ -25,7 +25,7 @@ def index
   private
 
   def secure_params
-    params.require(:recommendation).permit( :application_recommendation)
+    params.require(:recommendation).permit(:application_recommendation)
   end
 
 end
