@@ -30,8 +30,9 @@ ActiveRecord::Schema.define(version: 20161128195424) do
   end
 
   create_table "recommendations", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "application_recommendation"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "requesters", force: :cascade do |t|
@@ -40,11 +41,10 @@ ActiveRecord::Schema.define(version: 20161128195424) do
     t.string   "program_of_study"
     t.string   "thesis_topic"
     t.integer  "session_number"
-    t.integer  "supervisor_id"
+    t.string   "supervisor"
     t.string   "academic_unit"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
-    t.index ["supervisor_id"], name: "index_requesters_on_supervisor_id", using: :btree
   end
 
   create_table "supervisors", force: :cascade do |t|
@@ -67,15 +67,9 @@ ActiveRecord::Schema.define(version: 20161128195424) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "type"
     t.string   "given_name"
     t.string   "last_name"
-    t.integer  "student_number"
-    t.integer  "bank_account_number"
-    t.string   "program_of_study"
-    t.string   "thesis_topic"
-    t.integer  "session_number"
-    t.string   "supervisor"
-    t.string   "academic_unit"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
