@@ -8,7 +8,7 @@ def index
   end
 
   def create
-     @recommendation = Recommendation.new(secure_params)
+     @recommendation = Recommendation.new(secure_params, :application_id => @application.id)
 
     if @recommendation.save
       redirect_to root_path

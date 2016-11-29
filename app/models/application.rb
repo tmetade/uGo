@@ -1,6 +1,4 @@
 class Application < ApplicationRecord
-	belongs_to :requester
-	belongs_to :supervisor
-	belongs_to :recommendation
+	has_many :recommendations, :dependent => :destroy
 	validates :conference_name, presence: true
 end

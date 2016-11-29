@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20161128195424) do
     t.string   "conference_name"
     t.date     "conference_date"
     t.string   "conference_location"
-    t.boolean  "status"
+    t.integer  "status"
     t.decimal  "registration_cost"
     t.decimal  "transportation_cost"
     t.decimal  "accomodation_cost"
@@ -30,9 +30,11 @@ ActiveRecord::Schema.define(version: 20161128195424) do
   end
 
   create_table "recommendations", force: :cascade do |t|
+    t.integer  "application_id"
     t.string   "application_recommendation"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.index ["application_id"], name: "index_recommendations_on_application_id", using: :btree
   end
 
   create_table "requesters", force: :cascade do |t|
@@ -41,10 +43,11 @@ ActiveRecord::Schema.define(version: 20161128195424) do
     t.string   "program_of_study"
     t.string   "thesis_topic"
     t.integer  "session_number"
-    t.string   "supervisor"
+    t.integer  "supervisor_id"
     t.string   "academic_unit"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.index ["supervisor_id"], name: "index_requesters_on_supervisor_id", using: :btree
   end
 
   create_table "supervisors", force: :cascade do |t|
