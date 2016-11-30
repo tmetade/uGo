@@ -29,6 +29,9 @@ body{
 	margin-right:0 !important;
 }
 
+.field{
+    margin-top:20px;
+}
 
 #intro-section{
 	height:100%;
@@ -109,6 +112,14 @@ body{
     text-align:center;
 }
 
+.sign-up-done{
+    margin-top:20px;
+}
+
+.login{
+    margin-top:20px;
+}
+
 /*flash*/
 .alert{
     margin-bottom:0 !important;
@@ -140,6 +151,39 @@ body{
     border-color: #d6e9c6;
     color: #468847;
     text-align: center;
+}
+
+.form-group{
+    display: inline-block;
+}
+
+.input-group-addon{
+        width: 40px;
+}
+
+.amount-input{
+    display:inline-flex;
+}
+
+.create-app-form-right > div{
+    margin-top:20px;
+
+}
+
+
+.create-app-form-left > div{
+    margin-top:40px;
+
+}
+
+.done{
+    margin-top: 35px;
+    width: 130px;
+    font-size: 1.3em;
+}
+
+.text-field{
+    width:192px;
 }
 
 /* Dashboard */
