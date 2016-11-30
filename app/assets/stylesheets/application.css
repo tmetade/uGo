@@ -91,6 +91,7 @@ body{
 
 .col-title{
     font-size:20px;
+    display: inline-block;
 }
 
 .col-title, .page-title{
@@ -165,9 +166,29 @@ body{
     margin-top: -20px;
 }
 
+.add-application{
+    float: right;
+    margin-top: 6px;
+    font-size: 2.5em;
+    margin-right: 25px;
+    z-index: 20;
+    color:#2094fc;
+}
 
+.add-application:hover{
+    text-decoration: none;
+    color:#2094fc;
 
+}
 
+.pending-apps{
+    margin-left: 25px;
+}
+
+.new-application{
+    margin-top: 50px;
+    text-align: center;
+}
 
 
 *= require bootstrap
