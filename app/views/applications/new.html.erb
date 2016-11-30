@@ -12,7 +12,11 @@
 
       <div class="row-fluid new-application">
 
-          <%= form_for :application do |f| %>
+      <h1 class="page-title">New Application</h1>
+
+
+
+      <%= form_for :application do |f| %>
 
           <% if @application.errors.any? %>
               <div id="error_explanation">
@@ -28,45 +32,73 @@
               </div>
             <% end %>
 
-            <p>
-              <%= f.label :application_number %><br>
-              <%= f.text_field :application_number %>
-            </p>
-           
-            <p>
-              <%= f.label :conference_name %><br>
-              <%= f.text_area :conference_name %>
-            </p>
 
-            <p>
+          <div class="create-app-form-left col-md-4 col-md-offset-2">
+
+           
+            <div>
+              <%= f.label :conference_name %><br>
+              <%= f.text_field :conference_name, class:'text-field' %>
+            </div>
+
+            <div>
               <%= f.label :conference_date %><br>
-              <%= f.date_field :conference_date %>
-            </p>
-            <p>
+              <%= f.date_field :conference_date, class:'text-field' %>
+            </div>
+            <div>
               <%= f.label :conference_location %><br>
-              <%= f.text_area :conference_location %>
-            </p>
-            <p>
+              <%= f.text_field :conference_location, class:'text-field' %>
+            </div>
+
+          </div>
+
+
+          <div class="create-app-form-right col-md-6 col-md-pull-1">
+
+            <div>
               <%= f.label :registration_cost %><br>
-              <%= f.text_area :registration_cost %>
-            </p>
-            <p>
+              <div class="amount-input">
+                  <span class="input-group-addon">$</span>
+                  <%= number_field(:registration_cost, in: 0.0..1000.0, step: 10) %>
+              </div>
+
+            </div>
+            <div>
               <%= f.label :transportation_cost %><br>
-              <%= f.text_area :transportation_cost %>
-            </p>
-            <p>
+              <div class="amount-input">
+                  <span class="input-group-addon">$</span>
+                  <%= number_field(:transportation_cost, in: 0.0..1000.0, step: 10) %>
+              </div>
+
+            </div>
+            <div>
               <%= f.label :accomodation_cost %><br>
-              <%= f.text_area :accomodation_cost %>
-            </p>
-            <p>
+              <div class="amount-input">
+                  <span class="input-group-addon">$</span>
+                  <%= number_field(:accomodation_cost, in: 0.0..1000.0, step: 10) %>
+              </div>
+
+            </div>
+            <div>
               <%= f.label :meals_cost %><br>
-              <%= f.text_area :meals_cost %>
-            </p>
+              <div class="amount-input">
+                  <span class="input-group-addon">$</span>
+                  <%= number_field(:meals_cost, in: 0.0..1000.0, step: 10) %>
+              </div>
+
+            </div>
+          </div>
+
+
            
             <p>
-              <%= f.submit %>
+              <%= f.submit "Submit", class:' btn btn-primary done' %>
             </p>
-          <% end %> 
+      <% end %>
+
+
+
+
       </div>
 </div>
 
