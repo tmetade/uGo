@@ -152,6 +152,17 @@ body{
     border-right-color: #D3D3D3;
 }
 
+.notification_message {
+
+}
+.notification_message h3{
+    color:#787d84;
+    font-size: 14;
+}  
+
+.notification_message p{
+    color:#afb8c6;
+}   
 
 .notifications-container{
     /*background-color: rgb(40,20,30);*/
