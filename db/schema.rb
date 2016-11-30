@@ -30,16 +30,12 @@ ActiveRecord::Schema.define(version: 20161128195424) do
   end
 
   create_table "recommendations", force: :cascade do |t|
-<<<<<<< HEAD
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-=======
     t.integer  "application_id"
     t.string   "application_recommendation"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.index ["application_id"], name: "index_recommendations_on_application_id", using: :btree
->>>>>>> master
+
   end
 
   create_table "requesters", force: :cascade do |t|
