@@ -5,9 +5,7 @@
             <%= link_to root_path do %>
               <%= image_tag "header.png", id:"header-logo" %>
             <% end %>        
-
-
-        
+                    
             <div class="header-link">
                     <%= link_to'Logout', destroy_user_session_path, :method => :delete, class: 'btn btn-primary'  %>   
             </div>
@@ -21,10 +19,17 @@
       <div class="row">
         <!--Applications-->
         <div class="col-md-8 applications-container">
-          <h2 class="col-title">Pending Applications</h2>
+          <!-- Pending Apps Header -->
+          <div class="row">
+            <h2 class="col-title pending-apps">Pending Applications </h2>
+            <%= link_to "+", new_application_path, class: 'add-application' %>
+          </div>
 
+          <!-- Pending Apps -->
+          <div class="row">
+        
 
-
+          </div>
         </div>
 
         <!--Messages/Notifications-->
