@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(version: 20161128195424) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.index ["application_id"], name: "index_recommendations_on_application_id", using: :btree
-
   end
 
   create_table "requesters", force: :cascade do |t|
@@ -71,15 +70,9 @@ ActiveRecord::Schema.define(version: 20161128195424) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "type"
     t.string   "given_name"
     t.string   "last_name"
-    t.integer  "student_number"
-    t.integer  "bank_account_number"
-    t.string   "program_of_study"
-    t.string   "thesis_topic"
-    t.integer  "session_number"
-    t.string   "supervisor"
-    t.string   "academic_unit"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
