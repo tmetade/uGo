@@ -35,9 +35,30 @@
         <!--Messages/Notifications-->
         <div class="col-md-4  notifications-container">
           <h2 class="col-title">Notifications</h2>
+          <hr>
 
+          <% for i in 0..3 %>
+
+          <div class="notification_message">
+            <div class="col-lg-12">
+              <div class="col-lg-11">
+                <h3>Notification: Sample Notification</h3>
+              </div>
+              <div class="col-lg-1">
+                <p>X</p>
+              </div>
+            </div>
+            <p>Shits fucked 
+            <% concat i.to_s %>
+            </p>
+            <hr>
+          </div>
+
+          <% end %>
+
+          <!-- SAMPLE NOTIFICATION -->
           
 
-        </div>
+
       </div>
 </div>
