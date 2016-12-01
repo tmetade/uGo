@@ -83,3 +83,5 @@ production:
   database: uGo_production
   username: uGo
   password: <%= ENV['UGO_DATABASE_PASSWORD'] %>
+
+  # 
