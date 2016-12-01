@@ -1,4 +1,4 @@
 class Requester < User
-	belongs_to :supervisor
-	has_many :applications
+	#belongs_to :supervisor
+	#has_many :applications
 end
