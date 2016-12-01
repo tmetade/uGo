@@ -34,7 +34,10 @@ ActiveRecord::Schema.define(version: 20161128195424) do
     t.string   "application_recommendation"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+<<<<<<< HEAD
     t.index ["application_id"], name: "index_recommendations_on_application_id", using: :btree
+=======
+>>>>>>> refs/remotes/origin/master
   end
 
   create_table "requesters", force: :cascade do |t|

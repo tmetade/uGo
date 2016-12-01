@@ -1,4 +1,3 @@
-<%= link_to 'Create Recommendation', new_recommendation_path %>
 <p>
   <strong>Title:</strong>
   <%= @application.conference_name %>
@@ -10,3 +9,4 @@
 </p>
 
 <%= link_to 'Back', controller: 'applications' %>
+<%= link_to 'Create Recommendation', new_recommendation_path(:application_id => @application.id)%>

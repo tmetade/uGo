@@ -8,9 +8,9 @@ def index
   end
 
   def create
-     @recommendation = Recommendation.new(secure_params, :application_id => @application.id)
+     @recommendation = Recommendation.new(secure_params)
 
-    if @recommendation.save
+    if @recommendation.save!
       redirect_to root_path
     else
       render ("new")
@@ -25,7 +25,7 @@ def index
   private
 
   def secure_params
-    params.require(:recommendation).permit(:application_recommendation)
+    params.require(:recommendation).permit(:application_id, :application_recommendation)
   end
 
 end

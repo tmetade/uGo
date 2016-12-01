@@ -1,4 +1,4 @@
 class Application < ApplicationRecord
-	has_many :recommendations, :dependent => :destroy
+	has_many :recommendation, :dependent => :destroy
 	validates :conference_name, presence: true
 end

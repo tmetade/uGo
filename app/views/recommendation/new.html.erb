@@ -3,10 +3,11 @@
 	<p>
     	<%= f.label :application_recommendation %><br>
     	<%= f.text_field :application_recommendation %>
+    	<%= f.hidden_field :application_id, value: params[:application_id] %>
     </p>
 
     <p>
-        <%= f.submit %>
+        <%= f.submit%>
     </p>
 
 <% end %>
