@@ -19,5 +19,11 @@ Rails.application.routes.draw do
       get '/:id' => 'recommendation#show'
     end
 
+    resources :requesters
+      scope '/requesters' do
+        get '/new' => 'requesters#new'
+        post '/new' => 'requesters#create'
+    end
+
   end
 

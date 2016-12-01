@@ -1,4 +1,2 @@
-class Requester < User
-	#belongs_to :supervisor
-	has_many :applications , :dependent => :destroy
+class Requester < ApplicationRecord
 end
