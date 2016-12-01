@@ -9,8 +9,6 @@ def index
 
   def create
      @recommendation = Recommendation.new(secure_params)
-     
-     @application = Application.find(:application_id)
 
     if @recommendation.save!
       redirect_to root_path
