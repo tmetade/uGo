@@ -29,4 +29,3 @@ class RequestersController < ApplicationController
   end
 
 end
-

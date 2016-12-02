@@ -50,13 +50,6 @@ ActiveRecord::Schema.define(version: 20161201192841) do
     t.index ["supervisor_id"], name: "index_requesters_on_supervisor_id", using: :btree
   end
 
-  create_table "supervisors", force: :cascade do |t|
-    t.integer  "employee_number"
-    t.integer  "grant_account_number"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -70,7 +63,7 @@ ActiveRecord::Schema.define(version: 20161201192841) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "type"
+    t.string   "role"
     t.string   "given_name"
     t.string   "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
