@@ -9,8 +9,9 @@ class RequestersController < ApplicationController
 
   def create
      @requester = Requester.new(secure_params)
+     @requester.user_id = current_user.id
 
-    if @requester.save
+    if @requester.save!
       redirect_to root_path
     else
       render ("new")
