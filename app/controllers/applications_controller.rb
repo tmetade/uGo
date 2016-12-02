@@ -11,6 +11,7 @@ class ApplicationsController < ApplicationController
      @application = Application.new(secure_params)
 
       @application.requester_id = Requester.find_by(user_id: current_user.id).id
+      @application.status = 0
      
 
     if @application.save
