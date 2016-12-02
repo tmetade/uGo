@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :supervisors
   # get 'signup/supervisor'
 
   # get 'signup/requester'
@@ -28,6 +27,12 @@ Rails.application.routes.draw do
       scope '/requesters' do
         get '/new' => 'requesters#new'
         post '/new' => 'requesters#create'
+    end
+
+    resources :supervisors
+    scope '/supervisors' do
+      get '/new' => 'supervisors#new'
+      post '/new' => 'supervisors#create'
     end
 
   end
