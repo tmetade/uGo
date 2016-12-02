@@ -25,21 +25,9 @@ Rails.application.routes.draw do
     end
 
     resources :requesters
-<<<<<<< HEAD
-    scope '/signup' do
-      get '/new' => 'requesters#new'
-      post '/new' => 'requesters#create'
-    end
-
-    resources :supervisor
-    scope '/signup' do
-      get '/new' => 'supervisor#new'
-      post '/new' => 'supervisor#create'
-=======
       scope '/requesters' do
         get '/new' => 'requesters#new'
         post '/new' => 'requesters#create'
->>>>>>> master
     end
 
   end
