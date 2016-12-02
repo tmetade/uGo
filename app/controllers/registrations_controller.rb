@@ -8,8 +8,7 @@ class RegistrationsController < Devise::RegistrationsController
     # end 
   end
 
-  # def create
-  #       resource.type = params[:type]
-  #       resource.save
-  # end
+  def sign_up_params
+    params.require(:user).permit(:given_name, :last_name, :email, :password, :password_confirmation, :role)
+  end
 end
