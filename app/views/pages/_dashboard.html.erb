@@ -43,7 +43,8 @@
           <h2 class="col-title">Notifications</h2>
 
           <hr>
-
+          <p><% application = Application.take %></p>
+          <p><% concat application.application_number %></p>
           <% for i in 0..3 %>
 
           <div class="notification_message">
