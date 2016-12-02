@@ -1,2 +1,2 @@
-class Requester < ApplicationRecord
+class Requester < ActiveRecord::Base
 end

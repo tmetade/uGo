@@ -29,8 +29,7 @@
 
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
-
+      
       <div class="col-md-12">
 
 
@@ -66,14 +65,14 @@
 
         <div class="field">
 
-            <%= f.label :type, "Student"%>
-            <%= f.radio_button :type, "Requester", :checked => true %>
+            <%= f.label :role, "Student"%>
+            <%= f.radio_button :role, "Requester", :checked => true %>
 
         </div>
 
         <div class="field">
-            <%= f.label :type, "Professor"%>
-            <%= f.radio_button :type, "Supervisor", :checked => false%>
+            <%= f.label :role, "Professor"%>
+            <%= f.radio_button :role, "Supervisor", :checked => false%>
 
         </div>
 
