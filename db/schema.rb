@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20161202193920) do
 
   create_table "requesters", force: :cascade do |t|
     t.integer  "student_number"
-    t.integer  "bank_account_number"
+    t.bigint   "bank_account_number"
     t.string   "program_of_study"
     t.string   "thesis_topic"
     t.integer  "session_number"
