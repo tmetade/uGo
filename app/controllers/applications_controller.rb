@@ -10,6 +10,9 @@ class ApplicationsController < ApplicationController
   def create
      @application = Application.new(secure_params)
 
+     @application.requester_id = Requester.where(user_id: current_user.id).find(1).id
+     
+
     if @application.save
       redirect_to root_path
     else
@@ -27,8 +30,8 @@ class ApplicationsController < ApplicationController
 
   def secure_params
     params.require(:application).permit( :application_number, :conference_name, :conference_date,
-    	 :conference_location, :status, :registration_cost, :transportation_cost, :accomodation_cost,
-    	:meals_cost, :requester_id)
+    	 :conference_location, :registration_cost, :transportation_cost, :accomodation_cost,
+    	:meals_cost)
   end
 
 end
