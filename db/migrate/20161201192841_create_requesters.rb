@@ -6,7 +6,7 @@ class CreateRequesters < ActiveRecord::Migration[5.0]
     	t.string :program_of_study
     	t.string :thesis_topic
     	t.integer :session_number
-    	t.belongs_to :supervisor, index: true
+    	t.integer :supervisor_id
     	t.string :academic_unit
     	t.integer :user_id
 

@@ -10,7 +10,8 @@ class ApplicationsController < ApplicationController
   def create
      @application = Application.new(secure_params)
 
-     @application.requester_id = Requester.where(user_id: current_user.id).find(1).id
+      @application.requester_id = Requester.find_by(user_id: current_user.id).id
+      @application.status = 0
      
 
     if @application.save
