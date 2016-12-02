@@ -89,7 +89,7 @@
             </div>
           </div>
 
-
+              <%= f.hidden_field :requester_id, value: session[:user_id] %>
            
             <p>
               <%= f.submit "Submit", class:' btn btn-primary done' %>

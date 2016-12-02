@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  # get 'signup/supervisor'
+
+  # get 'signup/requester'
+
   devise_for :users, :controllers => {:registrations => 'registrations'}
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'pages#index'
@@ -17,6 +21,18 @@ Rails.application.routes.draw do
       get '/new' => 'recommendation#new'
       post '/new' => 'recommendation#create'
       get '/:id' => 'recommendation#show'
+    end
+
+    resources :requesters
+      scope '/requesters' do
+        get '/new' => 'requesters#new'
+        post '/new' => 'requesters#create'
+    end
+
+    resources :supervisors
+    scope '/supervisors' do
+      get '/new' => 'supervisors#new'
+      post '/new' => 'supervisors#create'
     end
 
   end

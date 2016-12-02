@@ -10,6 +10,7 @@ class CreateApplications < ActiveRecord::Migration[5.0]
     	t.decimal :transportation_cost
     	t.decimal :accomodation_cost
     	t.decimal :meals_cost
+      t.integer :requester_id
 
       t.timestamps
     end

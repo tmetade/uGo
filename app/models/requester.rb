@@ -1,4 +1,3 @@
-class Requester < User
-	#belongs_to :supervisor
-	#has_many :applications
+class Requester < ActiveRecord::Base
+	belongs_to :user
 end

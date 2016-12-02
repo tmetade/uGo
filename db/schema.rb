@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161128195424) do
+ActiveRecord::Schema.define(version: 20161202193920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20161128195424) do
     t.decimal  "transportation_cost"
     t.decimal  "accomodation_cost"
     t.decimal  "meals_cost"
+    t.integer  "requester_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end
@@ -34,10 +35,6 @@ ActiveRecord::Schema.define(version: 20161128195424) do
     t.string   "application_recommendation"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
-<<<<<<< HEAD
-    t.index ["application_id"], name: "index_recommendations_on_application_id", using: :btree
-=======
->>>>>>> refs/remotes/origin/master
   end
 
   create_table "requesters", force: :cascade do |t|
@@ -48,16 +45,17 @@ ActiveRecord::Schema.define(version: 20161128195424) do
     t.integer  "session_number"
     t.integer  "supervisor_id"
     t.string   "academic_unit"
+    t.integer  "user_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.index ["supervisor_id"], name: "index_requesters_on_supervisor_id", using: :btree
   end
 
   create_table "supervisors", force: :cascade do |t|
-    t.integer  "employee_number"
-    t.integer  "grant_account_number"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.string   "employee_number"
+    t.integer  "user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -73,7 +71,7 @@ ActiveRecord::Schema.define(version: 20161128195424) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "type"
+    t.string   "role"
     t.string   "given_name"
     t.string   "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
