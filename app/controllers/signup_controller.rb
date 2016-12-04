@@ -1,9 +1,4 @@
 class SignupController < ApplicationController
-  def supervisor
-  end
-
-  def requester
-  end
 
   def resource_name
     :requester
