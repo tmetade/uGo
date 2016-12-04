@@ -25,7 +25,7 @@
          <%= f.label :program_of_study %><br />
          <%= f.text_field :program_of_study%>
         </div>
-       <div class="field">
+        <div class="field">
          <%= f.label :thesis_topic %><br />
          <%= f.text_field :thesis_topic%>
         </div>
@@ -35,7 +35,7 @@
         </div>
         <div class="field">
          <%= f.label :supervisor_id %><br />
-         <%= f.text_field :supervisor_id%>
+         <%= collection_select(:requester, :supervisor, @supervisor, :id, :last_name) %>
         </div>
         <div class="field">
          <%= f.label :academic_unit %><br />

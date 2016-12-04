@@ -11,8 +11,8 @@ class SupervisorsController < ApplicationController
      @supervisor = Supervisor.new(secure_params)
      @supervisor.user_id = current_user.id
 
-    if @supervisor.save!
-      redirect_to root_path
+    if @supervisor.save
+      render "pages/_supervisor_dashboard"
     else
 	  redirect_to action: :new    
 	end
