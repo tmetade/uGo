@@ -35,7 +35,8 @@
         </div>
         <div class="field">
          <%= f.label :supervisor_id %><br />
-         <%= f.text_field :supervisor_id%>
+        <%= collection_select(:requester, :supervisor, @supervisor, :id, :last_name) %>
+
         </div>
         <div class="field">
          <%= f.label :academic_unit %><br />

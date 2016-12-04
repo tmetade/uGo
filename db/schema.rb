@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(version: 20161202193920) do
     t.integer  "user_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
-    t.index ["supervisor_id"], name: "index_requesters_on_supervisor_id", using: :btree
   end
 
   create_table "supervisors", force: :cascade do |t|
