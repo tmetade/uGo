@@ -35,5 +35,7 @@ Rails.application.routes.draw do
       post '/new' => 'supervisors#create'
     end
 
+    get '/home' =>'pages#_supervisor_dashboard'
+
   end
 

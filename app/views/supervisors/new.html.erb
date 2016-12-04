@@ -1,4 +1,3 @@
-<%= devise_error_messages! %>
 <div class="container">
   <div class="row-fluid">
     <div class="header">
@@ -24,7 +23,20 @@
 
 
       <%= form_for :supervisor do |f| %>
-      <%= devise_error_messages! %>
+      
+      <% if @supervisor.errors.any? %>
+              <div id="error_explanation">
+                <h2>
+                  <%= pluralize(@supervisor.errors.count, "error") %> prohibited
+                  this article from being saved:
+                </h2>
+                <ul>
+                  <% @supervisor.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
 
       <div class="col-md-12">
 

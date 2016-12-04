@@ -32,8 +32,23 @@
 
           <!-- Pending Apps -->
           <div class="row">
-        
 
+            <% @supervisor = Supervisor.find_by(user_id: current_user.id)%>
+            <% @requester = Requester.where(supervisor_id: @supervisor.id)%>
+            <% for application in Application.where(requester_id: @requester)%>
+              <div class="notification_message">
+                <div class="col-lg-12">
+                  <div class="col-lg-11">
+                    <h3>Notification: Sample Notification</h3>              
+                  </div>
+                    <p>requester_id:<% concat application.requester_id %></p>
+                    <p>Application Number:<% concat application.application_number %></p>
+                    <p>Conference Name:<% concat application.conference_name %></p>
+                    <p>Conference Date:<% concat application.conference_date %></p> 
+                    <hr>
+                </div>
+              </div>
+            <% end %>
           </div>
         </div>
 
