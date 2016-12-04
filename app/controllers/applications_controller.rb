@@ -14,7 +14,7 @@ class ApplicationsController < ApplicationController
       @application.status = 0
      
 
-    if @application.save!
+    if @application.save
       redirect_to root_path
     else
       render ("new")

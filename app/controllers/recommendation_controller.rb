@@ -10,7 +10,7 @@ def index
   def create
      @recommendation = Recommendation.new(secure_params)
 
-    if @recommendation.save!
+    if @recommendation.save
       redirect_to root_path
     else
       render ("new")

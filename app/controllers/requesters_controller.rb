@@ -16,7 +16,7 @@ class RequestersController < ApplicationController
      @requester.supervisor_id = Supervisor.find_by(user_id: @passed_supervisor).id 
      
 
-    if @requester.save!
+    if @requester.save
       redirect_to root_path
     else
       redirect_to action: :new

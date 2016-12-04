@@ -1,5 +1,6 @@
 class Recommendation < ApplicationRecord
 	 belongs_to :application 
-	# belongs_to :supervisor
+	
+	 validates :application_recommendation, :presence => true
 	
 end
