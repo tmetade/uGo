@@ -1,9 +1,9 @@
-class RecommendationController < ApplicationController
+class RecommendationsController < ApplicationController
 def index
     @recommendation =  Recommendation.all;
-	end
+  end
 
-	def new
+  def new
     @recommendation = Recommendation.new;
   end
 
