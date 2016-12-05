@@ -1,5 +1,5 @@
 <div class="dashboard-container container">
-  <div class="row-fluid">
+      <div class="row-fluid">
         <div class="header">
 
             <%= link_to root_path do %>
@@ -7,15 +7,10 @@
             <% end %>        
         
             <div class="header-link">
-              <div class="col-lg-8">
-                <div class="col-md-6">
-                  <h5><%= current_user.role %></h5>
-                </div>              
-                <div class="col-md-6">
-                  <h5><%= current_user.given_name %></h5>
-                </div>
+              <div class="col-lg-6">
+                <h5><%= current_user.given_name %></h5>
               </div>
-              <div class="col-lg-4">
+              <div class="col-lg-6">
                 <%= link_to'Logout', destroy_user_session_path, :method => :delete, class: 'btn btn-primary'  %>                
               </div>
 
@@ -23,54 +18,47 @@
 
 
         </div>
-  </div>
-
-  <div class="row">
-        <!--Applications-->
-    <div class="col-md-8 applications-container">
-          <!-- Pending Apps Header -->
-      <div class="row">
-        <h2 class="col-title pending-apps">Pending Applications </h2>
-        <%= link_to "+", new_application_path, class: 'add-application' %>
       </div>
 
-      <!-- Pending Apps -->
-      <div class="row">
-        <% @requester = Requester.where(user_id: current_user.id)%>
-        <% for application in Application.where(requester_id: @requester)%>
 
-        <%= link_to controller: "applications", action: "requester_show", id: application.id do%>
-        <div class="pending-apps-row">
-          <h3><% concat application.conference_name %></h3>              
 
-          <div class="col-lg-6">
-            <p>Application Number:<% concat application.id %></p>
-            <p>Conference Date:<% concat application.conference_date %></p> 
-            <p>Total cost: $<% concat application.meals_cost %></p>
-          </div>
-          <div class="col-lg-6">
-            <p>Registration cost: $<% concat application.registration_cost %></p>
-            <p>Transportation cost: $<% concat application.transportation_cost %></p> 
-            <p>Accomodation cost: $<% concat application.accomodation_cost %></p> 
-            <p>Meal cost: $<% concat application.meals_cost %></p> 
+      <div class="dashboard-content row">
+        <!--Applications-->
+        <div class="col-md-8 applications-container">
+          <!-- Pending Apps Header -->
+          <div class="pending-apps-header row">
+            <p class="col-title pending-apps">Pending Applications </p>
+            <%= link_to "+", new_application_path, class: 'add-application' %>
           </div>
 
-          <p>Status:<%  application.requester_id %></p>
-          <p>Application Number:<% concat application.application_number %></p>
-          <p>Conference Name:<% concat application.conference_name %></p>
-          <p>Conference Date:<% concat application.conference_date %></p> 
-          <hr>
+          <!-- Pending Apps -->
+          <div class="pending-apps-content row">
+            <% @requester = Requester.where(user_id: current_user.id)%>
+            <% for application in Application.where(requester_id: @requester)%>
+            <%= link_to controller: "applications", action: "requester_show", id: application.id do%>
+              <div class="pending-apps-row">
+                <h3><% concat application.conference_name %></h3>              
+
+                <div class="col-lg-6">
+                    <p>Application Number:<% concat application.id %></p>
+                    <p>Conference Date:<% concat application.conference_date %></p> 
+                    <p>Total cost: $<% concat application.meals_cost %></p>
+                </div>
+                  <div class="col-lg-6">
+                    <p>Registration cost: $<% concat application.registration_cost %></p>
+                    <p>Transportation cost: $<% concat application.transportation_cost %></p> 
+                    <p>Accomodation cost: $<% concat application.accomodation_cost %></p> 
+                    <p>Meal cost: $<% concat application.meals_cost %></p> 
+                </div>
+                <hr>
+              </div>
+              <% end %>
+            <% end %>
+          </div>
         </div>
 
-        <% end %>
-      </div>
-    </div>  
-  </div>   
-        
-      
-
         <!--Messages/Notifications-->
-    <div class="col-md-4 notifications-container">
+        <div class="col-md-4 notifications-container">
           <div class="notifications-header">
           <p class="col-title">Notifications</p>
           </div>
@@ -78,25 +66,29 @@
           <div class="notifications-content">
 
 
-          <hr>
           <% for application in Application.first(10) %>
-            <div class="notification_message">
-              <div class="col-lg-12">
+
+            <div class="notification-message">
                 <div class="col-lg-11">
-                  <h3>Notification: Sample Notification</h3>              
+                  <h3>Notification Name</h3>             
+
+                  <p>Application Number:<% concat application.id %></p>
+                  <p>Conference Name:<% concat application.conference_name %></p>
+                  <p>Conference Date:<% concat application.conference_date %></p> 
                 </div>
-                <div class="col-lg-1">
-                  <p id="hide">X</p>
-                </div>
+              <div class="col-lg-1">
+                <p id="hide"><a>X</a></p>
               </div>
-              <p>Application Number:<% concat application.application_number %></p>
-              <p>Conference Name:<% concat application.conference_name %></p>
-              <p>Conference Date:<% concat application.conference_date %></p> 
-              <hr>
             </div>
-          <% end %>
-        </div>
-      </div>
-          <!-- SAMPLE NOTIFICATION -->
+
           
+          <% end %>
+
+
+          </div>
         </div>
+          
+
+
+      </div>
+</div>
