@@ -30,7 +30,9 @@ class ApplicationsController < ApplicationController
     @application = Application.find(params[:id])
   end
 
-  private
+
+
+
 
   def secure_params
     params.require(:application).permit(:conference_name, :conference_date,

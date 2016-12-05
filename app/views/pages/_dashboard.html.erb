@@ -35,21 +35,25 @@
           <div class="pending-apps-content row">
             <% @requester = Requester.where(user_id: current_user.id)%>
             <% for application in Application.where(requester_id: @requester)%>
-            <%= link_to controller: "applications", action: "requester_show", id: application.id do%>
-              <div class="pending-apps-row">
-                <h3><% concat application.conference_name %></h3>              
 
-                <div class="col-lg-6">
-                    <p>Application Number:<% concat application.id %></p>
-                    <p>Conference Date:<% concat application.conference_date %></p> 
-                    <p>Total cost: $<% concat application.meals_cost %></p>
+
+            <%= link_to controller: "applications", action: "requester_show", id: application.id do%>
+              <div class="pending-apps-row <%= application.recommendation %>">
+                <div class="conference-name-date col-md-9">
+                    <p class="app-header"><% concat application.conference_name %></p>
+                    <p class="conference-date"><% concat application.conference_date.strftime("%b %d, %Y") %></p>
+
+                    
+
+
                 </div>
-                  <div class="col-lg-6">
-                    <p>Registration cost: $<% concat application.registration_cost %></p>
-                    <p>Transportation cost: $<% concat application.transportation_cost %></p> 
-                    <p>Accomodation cost: $<% concat application.accomodation_cost %></p> 
-                    <p>Meal cost: $<% concat application.meals_cost %></p> 
+
+                <div class="price-date-created col-md-3">
+                    <p class="total-cost">$<% concat application.meals_cost %></p>
+                    <p class="date-created">Created on <% concat application.created_at.strftime("%b %d, %Y") %></p>
+
                 </div>
+
                 <hr>
               </div>
               <% end %>
