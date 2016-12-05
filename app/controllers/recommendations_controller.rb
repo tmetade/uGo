@@ -11,7 +11,7 @@ def index
      @recommendation = Recommendation.new(secure_params)
 
     if @recommendation.save
-      redirect_to root_path
+      redirect_to home_path
     else
       render ("new")
     end
