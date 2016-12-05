@@ -74,7 +74,7 @@
                 <h3>Notification: Sample Notification</h3>              
               </div>
               <div class="col-lg-1">
-                <p> X </p>
+              <%= link_to 'X', controller: "pages", action: "delete_notification", id: application.id %> 
               </div>
                 <p>Conference Name:<% concat application.conference_name %></p>
                 <p>Conference Date:<% concat application.conference_date %></p> 
