@@ -26,7 +26,7 @@ Rails.application.routes.draw do
       scope '/requesters' do
         get '/new' => 'requesters#new'
         post '/new' => 'requesters#create'
-        get '/requester_show' => 'requesters#requester_show'
+        get '/application/:id' => 'applications#requester_show'
     end
 
     resources :supervisors
