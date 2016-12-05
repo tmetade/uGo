@@ -55,7 +55,8 @@
                     <p>Application Number:<% concat application.application_number %></p>
                     <p>Conference Name:<% concat application.conference_name %></p>
                     <p>Conference Date:<% concat application.conference_date %></p>
-                    <%= link_to 'View', controller: "applications", action: "supervisor_show", id: @application.id %>
+                    <% @application_id = application.id %>
+                    <%= link_to 'View', controller: "applications", action: "supervisor_show", id: @application_id %>
                     <hr>
                 </div>
               </div>
