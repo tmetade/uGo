@@ -34,7 +34,7 @@
           <!-- Pending Apps -->
           <div class="pending-apps-content row">
             <% @requester = Requester.where(user_id: current_user.id)%>
-            <% Application.where(requester_id: @requester).each do |application| %>
+            <% for application in Application.where(requester_id: @requester)%>
               <div class="pending-apps-row">
                 <h3><% concat application.conference_name %></h3>              
 
@@ -48,6 +48,8 @@
                     <p>Transportation cost <% concat application.transportation_cost %></p> 
                     <p>Accomodation cost <% concat application.accomodation_cost %></p> 
                     <p>Meal cost <% concat application.meals_cost %></p> 
+                    <%= link_to 'View', controller: "applications", action: "requester_show", id: application.id %>
+
                 </div>
                 <hr>
               </div>
