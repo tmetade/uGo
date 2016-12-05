@@ -12,7 +12,7 @@ def index
      @app =Application.find(@recommendation.application_id)
       @app.notifyrequester = true
     if @recommendation.save
-      redirect_to root_path
+      redirect_to home_path
     else
       render ("new")
     end
