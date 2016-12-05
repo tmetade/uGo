@@ -265,7 +265,9 @@ body, html{
         border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: #ededed;
-    height:160px;
+height: 98px;
+    padding-top: 11px;
+        color: #000;
 }
 
 .dashboard-content{
@@ -301,6 +303,59 @@ body, html{
     margin-right: 10px;
     margin-top: 10px;
     height: 17px;
+}
+
+.approved{
+    background-color: #cce5cc;
+}
+
+.declined{
+    background-color: #ffcccc;
+}
+
+.app-header{
+    font-size:23px;
+    margin-top: 5px;
+    margin-left: 35px;
+    font-weight: bolder;
+}
+
+.conference-date{
+    margin-left: 35px;
+    position: absolute;
+    margin-top: 37px;
+}
+
+.conference-date, .app-header{
+    float: left;
+
+}
+
+.total-cost{
+    font-size: 32px;
+    position: absolute;
+    margin-left: 57px;
+    margin-top: 3px;
+}
+
+.conference-name-date{
+    text-align: left;
+}
+
+.date-created{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 5px;
+    right: 0;
+    margin-right: 10px;
+}
+
+.price-date-created{
+    height:100%;
+}
+
+.pending{
+    background-color: #ffffcc;
 }
 
 
