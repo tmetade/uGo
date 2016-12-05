@@ -28,6 +28,7 @@ class ApplicationsController < ApplicationController
   end
 
   def requester_show
+    @cats = Application.select("DISTINCT name, id")
     @application = Application.find(params[:id])
   end
 
