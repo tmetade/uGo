@@ -74,10 +74,12 @@
                       <p>Application Number:<% concat application.id %></p>
                       <p>Conference Name:<% concat application.conference_name %></p>
                       <p>Conference Date:<% concat application.conference_date %></p> 
+                      <%= link_to 'X', controller: "pages", action: "delete_notification", id: application.id %> 
 
                 </div>
               
               <% end %>
+
             </div>
 
         </div>

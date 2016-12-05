@@ -1,41 +1,62 @@
-<p>
-  <strong>Applcation Number: </strong>
-  <%= @application.id %>
-</p>
+<div class="container">
+      <div class="row-fluid">
+        <div class="header">
+            <%= link_to root_path do %>
+              <%= image_tag "header.png", id:"header-logo" %>
+            <% end %>        
+            <div class="header-link">
+                    <%= link_to'Logout', destroy_user_session_path, :method => :delete, class: 'btn btn-primary'  %>   
+            </div>
+        </div>
+      </div>
 
-<p>
-  <strong>Conference Name: </strong>
-  <%= @application.conference_name %>
-</p>
- 
-<p>
-  <strong>Conference Location: </strong>
-  <%= @application.conference_location %>
-</p>
+      <div class="row-fluid new-application">
 
-<p>
-  <strong>Conference Date: </strong>
-  <%= @application.conference_date%>
-</p>
+      <h1 class="page-title">Application <% @application.id%></h1>
 
-<p>
-  <strong>Registration Cost: </strong>
-  <%= @application.registration_cost %>
-</p>
 
-<p>
-  <strong>Transportation Cost: </strong>
-  <%= @application.transportation_cost %>
-</p>
 
-<p>
-  <strong>Accomodation Cost: </strong>
-  <%= @application.accomodation_cost %>
-</p>
+          <div class="create-app-form-left col-md-4 col-md-offset-2">
 
-<p>
-  <strong>Meals Cost: </strong>
-  <%= @application.meals_cost %>
-</p>
+           
+            <div>
+             <strong>Conference Name: </strong><br>
+              <p><%= @application.conference_name %></p>
+            </div>
 
-<%= link_to 'Back', root_path %>
+            <div>
+             <strong>Conference Location: </strong><br>
+              <p><%= @application.conference_location %></p>
+            </div>
+            <div>
+             <strong>Conference Date: </strong><br>
+              <p><%= @application.conference_date %></p>
+            </div>
+            <%= link_to 'Back', home_path %>
+
+          </div>
+
+
+          <div class="create-app-form-right col-md-6 col-md-pull-1">
+
+            <div>
+             <strong>Registration Cost: </strong><br>
+              <p><%= @application.registration_cost %></p>
+            </div>
+            <div>
+             <strong>Transportation Cost: </strong><br>
+              <p><%= @application.transportation_cost %></p>
+            </div>
+            <div>
+             <strong>Accomodation Cost: </strong><br>
+              <p><%= @application.accomodation_cost %></p>
+            </div>
+           <div>
+             <strong>Meals cost: </strong><br>
+              <p><%= @application.meals_cost %></p>
+            </div>
+          </div>
+      </div>
+</div>
+
+
