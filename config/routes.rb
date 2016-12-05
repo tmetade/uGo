@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   # get 'signup/supervisor'
 
-  # get 'signup/requester'
 
   devise_for :users, :controllers => {:registrations => 'registrations'}
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -15,18 +14,19 @@ Rails.application.routes.draw do
       get '/:id' => 'applications#show'
   	end
 
-    resources :recommendation
-    scope '/recommendation' do
-      get '/' => 'recommendation#index'
-      get '/new' => 'recommendation#new'
-      post '/new' => 'recommendation#create'
-      get '/:id' => 'recommendation#show'
+    resources :recommendations
+    scope '/recommendations' do
+      get '/' => 'recommendations#index'
+      get '/new' => 'recommendations#new'
+      post '/new' => 'recommendations#create'
+      get '/:id' => 'recommendations#show'
     end
 
     resources :requesters
       scope '/requesters' do
         get '/new' => 'requesters#new'
         post '/new' => 'requesters#create'
+        get '/application/:id' => 'applications#requester_show'
     end
 
     resources :supervisors
@@ -37,6 +37,8 @@ Rails.application.routes.draw do
     end
 
     get '/home' =>'pages#_supervisor_dashboard'
+
+
 
   end
 

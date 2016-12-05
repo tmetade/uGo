@@ -27,7 +27,7 @@
 			<div class="field">
 
 				<%= f.label "Decision:" %>
-				<%= f.select :application_recommendation, options_for_select([['Approved',1],['Rejected', -1]]),
+				<%= f.select :application_status, options_for_select([['Approved',1],['Rejected', -1]]),
 			    {}, { :class => 'decision-select' } %>
 
 	        </div>

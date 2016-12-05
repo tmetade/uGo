@@ -9,7 +9,6 @@
   <% @application.each do |application| %>
     <tr>
       <td><%= application.conference_name %></td>
-      <td><%= application.status %></td>
       <td><%= link_to 'Show', application_path(application) %></td>
     </tr>
   <% end %>

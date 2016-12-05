@@ -1,9 +1,9 @@
-class RecommendationController < ApplicationController
+class RecommendationsController < ApplicationController
 def index
     @recommendation =  Recommendation.all;
-	end
+  end
 
-	def new
+  def new
     @recommendation = Recommendation.new;
   end
 
@@ -11,7 +11,7 @@ def index
      @recommendation = Recommendation.new(secure_params)
 
     if @recommendation.save
-      redirect_to root_path
+      redirect_to home_path
     else
       render ("new")
     end

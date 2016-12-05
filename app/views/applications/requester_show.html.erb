@@ -1,11 +1,41 @@
 <p>
-  <strong>Title:</strong>
+  <strong>Applcation Number: </strong>
+  <%= @application.id %>
+</p>
+
+<p>
+  <strong>Conference Name: </strong>
   <%= @application.conference_name %>
 </p>
  
 <p>
-  <strong>Location:</strong>
+  <strong>Conference Location: </strong>
   <%= @application.conference_location %>
 </p>
 
-<%= link_to 'Back', controller: 'applications' %>
+<p>
+  <strong>Conference Date: </strong>
+  <%= @application.conference_date%>
+</p>
+
+<p>
+  <strong>Registration Cost: </strong>
+  <%= @application.registration_cost %>
+</p>
+
+<p>
+  <strong>Transportation Cost: </strong>
+  <%= @application.transportation_cost %>
+</p>
+
+<p>
+  <strong>Accomodation Cost: </strong>
+  <%= @application.accomodation_cost %>
+</p>
+
+<p>
+  <strong>Meals Cost: </strong>
+  <%= @application.meals_cost %>
+</p>
+
+<%= link_to 'Back', root_path %>
