@@ -1,4 +1,37 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+      <div class="row-fluid">
+        <div class="header">
+            <%= link_to root_path do %>
+              <%= image_tag "header.png", id:"header-logo" %>
+            <% end %>        
+            <div class="header-link">
+                    <%= link_to'Logout', destroy_user_session_path, :method => :delete, class: 'btn btn-primary'  %>   
+            </div>
+        </div>
+      </div>
 
-<%= link_to 'Edit', edit_recommendation_path(@recommendation) %> |
-<%= link_to 'Back', recommendations_path %>
+      <div class="row-fluid new-application">
+
+      <h1 class="page-title">Recommendation for Application <%= @recommendation.application_id%></h1>
+
+            <div>
+              <strong>Status: </strong><br>
+              <p><% @status = @recommendation.application_status 
+		              if @status == 1 
+		              	concat "Approved"
+		              elsif @status == -1
+		              	concat "Rejected"
+		              else 
+		              	concat "Pending"
+		              end 
+              	 %>
+              </p>
+            </div>
+            <div>
+              <strong>Recommendation: </strong><br>
+              <p><%= @recommendation.application_recommendation %></p>
+            </div>
+
+      </div>
+</div>

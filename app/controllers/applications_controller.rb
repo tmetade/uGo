@@ -13,8 +13,6 @@ class ApplicationsController < ApplicationController
      @application.requester_id = Requester.find_by(user_id: current_user.id).id
      
     if @application.save 
-      @recommendation = Recommendation.create({:application_id => @application.id, :application_status => 0})
-
       redirect_to root_path
     else
       render ("new")

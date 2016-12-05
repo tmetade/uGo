@@ -29,6 +29,7 @@
         <!--Applications-->
     <div class="col-md-8 applications-container">
           <!-- Pending Apps Header -->
+
           <div class="row">
             <h2 class="col-title pending-apps">Pending Applications </h2>
             <%= link_to "+", new_application_path, class: 'add-application' %>
@@ -38,11 +39,21 @@
           <div class="row">
             <% @requester = Requester.where(user_id: current_user.id)%>
             <% for application in Application.where(requester_id: @requester)%>
-              <div class="notification_message">
-                <div class="col-lg-12">
-                  <div class="col-lg-11">
-                    <h3>Notification: Sample Notification</h3>              
-                  </div>
+
+            <%= link_to controller: "applications", action: "requester_show", id: application.id do%>
+              <div class="pending-apps-row">
+                <h3><% concat application.conference_name %></h3>              
+
+                <div class="col-lg-6">
+                    <p>Application Number:<% concat application.id %></p>
+                    <p>Conference Date:<% concat application.conference_date %></p> 
+                    <p>Total cost: $<% concat application.meals_cost %></p>
+                </div>
+                  <div class="col-lg-6">
+                    <p>Registration cost: $<% concat application.registration_cost %></p>
+                    <p>Transportation cost: $<% concat application.transportation_cost %></p> 
+                    <p>Accomodation cost: $<% concat application.accomodation_cost %></p> 
+                    <p>Meal cost: $<% concat application.meals_cost %></p> 
                 </div>
                 <p>Status:<%  application.requester_id %></p>
                 <p>Application Number: <% concat application.application_number %></p>
@@ -57,8 +68,13 @@
       
 
         <!--Messages/Notifications-->
-    <div class="col-md-4  notifications-container">
-          <h2 class="col-title">Notifications</h2>
+        <div class="col-md-4 notifications-container">
+          <div class="notifications-header">
+          <p class="col-title">Notifications</p>
+          </div>
+
+          <div class="notifications-content">
+
 
           <hr>
           <% for application in Application.first(10) %>
