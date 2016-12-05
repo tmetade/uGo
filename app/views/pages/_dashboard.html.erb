@@ -73,14 +73,18 @@
           <% for application in Application.first(10) %>
 
             <div class="notification-message">
-
-                  <h3>Notification Name</h3>              
+                <div class="col-lg-11">
+                  <h3>Notification Name</h3>             
 
                   <p>Application Number:<% concat application.id %></p>
                   <p>Conference Name:<% concat application.conference_name %></p>
                   <p>Conference Date:<% concat application.conference_date %></p> 
-
+                </div>
+              <div class="col-lg-1">
+                <p id="hide"><a>X</a></p>
+              </div>
             </div>
+
           
           <% end %>
 
