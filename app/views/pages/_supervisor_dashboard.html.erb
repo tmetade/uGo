@@ -66,8 +66,9 @@
 
           <div class="notifications-content">
               <% for application in Application.first(10) %>
-
-                <div class="notification-message">
+                <% @temp = Recommendation.find_by(application_id: application.id)%>
+                <% @status = @temp.application_id%>
+                <div class="notification-message <%= 'pending' if @status == 0 %>">
 
                       <h3 style="display:inline-block;">Notification Name</h3>
 

@@ -32,7 +32,7 @@
              <strong>Conference Date: </strong><br>
               <p><%= @application.conference_date %></p>
             </div>
-            <%= link_to 'Back', home_path %>
+            <%= link_to 'Back', home_path, class: 'btn btn-primary' %>
 
           </div>
 
@@ -55,7 +55,7 @@
              <strong>Meals cost: </strong><br>
               <p><%= @application.meals_cost %></p>
             </div>
-            <%= link_to 'Create Recommendation', new_recommendation_path(:application_id => @application.id)%>
+            <%= link_to 'Create Recommendation', new_recommendation_path(:application_id => @application.id), class: 'btn btn-primary'%>
           </div>
       </div>
 </div>
