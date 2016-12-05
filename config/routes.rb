@@ -15,12 +15,12 @@ Rails.application.routes.draw do
       get '/:id' => 'applications#show'
   	end
 
-    resources :recommendation
-    scope '/recommendation' do
-      get '/' => 'recommendation#index'
-      get '/new' => 'recommendation#new'
-      post '/new' => 'recommendation#create'
-      get '/:id' => 'recommendation#show'
+    resources :recommendations
+    scope '/recommendations' do
+      get '/' => 'recommendations#index'
+      get '/new' => 'recommendations#new'
+      post '/new' => 'recommendations#create'
+      get '/:id' => 'recommendations#show'
     end
 
     resources :requesters

@@ -10,28 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161202193920) do
+ActiveRecord::Schema.define(version: 20161202215818) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "applications", force: :cascade do |t|
-    t.integer  "application_number"
     t.string   "conference_name"
     t.date     "conference_date"
     t.string   "conference_location"
-    t.integer  "status"
     t.decimal  "registration_cost"
     t.decimal  "transportation_cost"
     t.decimal  "accomodation_cost"
     t.decimal  "meals_cost"
     t.integer  "requester_id"
+    t.integer  "recommendation_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end
 
   create_table "recommendations", force: :cascade do |t|
     t.integer  "application_id"
+    t.integer  "application_status"
     t.string   "application_recommendation"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false

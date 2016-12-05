@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Recommendations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recommendation.each do |recommendation| %>
+      <tr>
+        <td><%= link_to 'Show', recommendation %></td>
+        <td><%= link_to 'Edit', edit_recommendation_path(recommendation) %></td>
+        <td><%= link_to 'Destroy', recommendation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Recommendation', new_recommendation_path %>

@@ -223,11 +223,12 @@ body{
 
 .add-application{
     float: right;
-    margin-top: 6px;
+    margin-top: 2px;
     font-size: 2.5em;
-    margin-right: 25px;
+    margin-right: 23px;
     z-index: 20;
     color:#2094fc;
+    height: 20px;
 }
 
 .add-application:hover{
@@ -243,6 +244,25 @@ body{
 .new-application{
     margin-top: 50px;
     text-align: center;
+}
+
+
+.commments-section{
+    margin-top: 20px;
+    width: 461px;
+    height: 165px;
+    max-height: 382px;
+    max-width: 875px;
+}
+
+.new-recommendation{
+    text-align: center;
+}
+
+.pending-apps-header, .notifications-header{
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #D3D3D3;
 }
 
 
