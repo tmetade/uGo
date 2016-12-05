@@ -27,13 +27,14 @@
         <div class="col-md-8 applications-container">
           <!-- Pending Apps Header -->
           <div class="row">
-            <h2 class="col-title pending-apps">Pending Applications </h2>
-            <%= link_to "+", new_application_path, class: 'add-application' %>
+            <h2 class="col-title pending-apps">View Applications</h2>
           </div>
 
           <!-- Pending Apps -->
           <div class="row">
-            <% @requester = Requester.where(user_id: current_user.id)%>
+
+            <% @supervisor = Supervisor.find_by(user_id: current_user.id)%>
+            <% @requester = Requester.where(supervisor_id: @supervisor.id)%>
             <% for application in Application.where(requester_id: @requester)%>
               <div class="notification_message">
                 <div class="col-lg-12">

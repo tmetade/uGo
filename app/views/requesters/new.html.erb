@@ -9,7 +9,22 @@
   <div class="row-fluid">
     <div class="sign-up">
       <h1 class="page-title">Requester Signup</h1>
-      <%= form_for @requester do |f| %>
+      <%= form_for :requester do |f| %>
+
+      <% if @requester.errors.any? %>
+      <h1>test</h1>
+              <div id="error_explanation">
+                <h2>
+                  <%= pluralize(@requester.errors.count, "error") %> prohibited
+                  this article from being saved:
+                </h2>
+                <ul>
+                  <% @requester.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
       
       <div class="col-md-12">
         
@@ -25,7 +40,7 @@
          <%= f.label :program_of_study %><br />
          <%= f.text_field :program_of_study%>
         </div>
-       <div class="field">
+        <div class="field">
          <%= f.label :thesis_topic %><br />
          <%= f.text_field :thesis_topic%>
         </div>
@@ -35,7 +50,7 @@
         </div>
         <div class="field">
          <%= f.label :supervisor_id %><br />
-         <%= f.text_field :supervisor_id%>
+         <%= collection_select(:requester, :supervisor, @supervisor, :id, :last_name) %>
         </div>
         <div class="field">
          <%= f.label :academic_unit %><br />
