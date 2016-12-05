@@ -245,5 +245,7 @@ body{
     text-align: center;
 }
 
+.hide { 
+}
 
 *= require bootstrap

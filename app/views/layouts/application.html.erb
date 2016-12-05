@@ -8,7 +8,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag 'favicon.ico' %>
   </head>
-
+  <script>
+  // Notification Buttons [HIDE]
+  $(document).ready(function(){
+      $("p#hide").on('click', function(){
+          $(this).parent('div').parent('div').parent('div').fadeOut();
+      });
+    });
+  </script>
   <body>
 
       <div class="container">
