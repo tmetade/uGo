@@ -22,8 +22,12 @@ class ApplicationsController < ApplicationController
 
   end
 
-  def show
+  def supervisor_show
     @cats = Application.select("DISTINCT name, id")
+    @application = Application.find(params[:id])
+  end
+
+  def requester_show
     @application = Application.find(params[:id])
   end
 

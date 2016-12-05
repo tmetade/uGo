@@ -33,6 +33,7 @@ Rails.application.routes.draw do
     scope '/supervisors' do
       get '/new' => 'supervisors#new'
       post '/new' => 'supervisors#create'
+      get '/application/:id' => 'applications#supervisor_show'
     end
 
     get '/home' =>'pages#_supervisor_dashboard'
