@@ -22,7 +22,6 @@ body{
 
 body, html{
         height:100%;
-        overflow: hidden;
 }
 
 .container{
@@ -211,6 +210,7 @@ body, html{
 
 .dashboard-container{
     margin-top: -20px;
+    overflow: hidden;
 }
 
 .add-application{

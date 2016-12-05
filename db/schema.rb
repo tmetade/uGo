@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20161202215818) do
     t.decimal  "accomodation_cost"
     t.decimal  "meals_cost"
     t.integer  "requester_id"
-    t.integer  "recommendation_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end
