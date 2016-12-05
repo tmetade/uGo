@@ -45,10 +45,11 @@
                   <div class="col-lg-11">
                     <h3>Notification: Sample Notification</h3>              
                   </div>
-                    <p>requester_id:<% concat application.requester_id %></p>
+                    <p>Status:<%  application.requester_id %></p>
                     <p>Application Number:<% concat application.application_number %></p>
                     <p>Conference Name:<% concat application.conference_name %></p>
                     <p>Conference Date:<% concat application.conference_date %></p> 
+                    <%= link_to 'View', controller: "applications", action: "requester_show", id: @application.id %>
                     <hr>
                 </div>
               </div>

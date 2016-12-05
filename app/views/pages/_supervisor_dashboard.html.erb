@@ -29,6 +29,7 @@
           <div class="row">
             <h2 class="col-title pending-apps">View Applications</h2>
           </div>
+          <hr>
 
           <!-- Pending Apps -->
           <div class="row">
@@ -39,12 +40,22 @@
               <div class="notification_message">
                 <div class="col-lg-12">
                   <div class="col-lg-11">
-                    <h3>Notification: Sample Notification</h3>              
+                    <h3><% concat application.application_number%></h3>              
                   </div>
-                    <p>requester_id:<% concat application.requester_id %></p>
+                    <p>
+                     <% @status = application.status
+                      if @status == -1
+                        concat "Declined"
+                      elsif @status == 1
+                        concat "Approved"
+                      else
+                        concat "Pending"
+                      end 
+                     %></p>
                     <p>Application Number:<% concat application.application_number %></p>
                     <p>Conference Name:<% concat application.conference_name %></p>
-                    <p>Conference Date:<% concat application.conference_date %></p> 
+                    <p>Conference Date:<% concat application.conference_date %></p>
+                    <%= link_to 'View', controller: "applications", action: "supervisor_show", id: @application.id %>
                     <hr>
                 </div>
               </div>
