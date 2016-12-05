@@ -37,7 +37,7 @@
             <% @supervisor = Supervisor.find_by(user_id: current_user.id)%>
             <% @requester = Requester.where(supervisor_id: @supervisor.id)%>
             <% for application in Application.where(requester_id: @requester)%>
-            <%= link_to controller: "applications", action: "requester_show", id: application.id do%>
+            <%= link_to controller: "applications", action: "supervisor_show", id: application.id do%>
               <div class="pending-apps-row">
                 <h3><% concat application.conference_name %></h3>             
                 <div class="col-lg-6">
