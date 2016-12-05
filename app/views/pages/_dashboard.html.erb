@@ -64,9 +64,10 @@
           </div>
 
           <div class="notifications-content">
-
-
-          <% for application in Application.first(10) %>
+              
+            <% @requester = Requester.where(user_id: current_user.id)%>
+              <% for application in Application.where(requester_id: @requester,notifyrequester: true)%>
+          
 
             <div class="notification-message">
 
