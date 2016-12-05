@@ -9,7 +9,8 @@ def index
 
   def create
      @recommendation = Recommendation.new(secure_params)
-
+     @app =Application.find(@recommendation.application_id)
+      @app.notifyrequester = true
     if @recommendation.save
       redirect_to root_path
     else
