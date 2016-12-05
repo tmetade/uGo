@@ -37,6 +37,7 @@ Rails.application.routes.draw do
     end
 
     get '/home' =>'pages#_supervisor_dashboard'
+    get '/delete' => 'pages#delete_notification'
 
 
 
