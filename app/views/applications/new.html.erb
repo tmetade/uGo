@@ -59,7 +59,7 @@
               <%= f.label :registration_cost %><br>
               <div class="amount-input">
                   <span class="input-group-addon">$</span>
-                  <%= f.number_field(:registration_cost, in: 0.0..10000.0, :step => :any) %>
+                  <%= f.number_field(:registration_cost, in: 0.0..10000.0, :step => 0.01) %>
               </div>
 
             </div>

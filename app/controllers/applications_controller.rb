@@ -35,4 +35,8 @@ class ApplicationsController < ApplicationController
     	:meals_cost)
   end
 
+  def self.total_cost
+    return [:registration_cost, :transportation_cost, :accomodation_cost, :meals_cost].sum
+  end
+
 end

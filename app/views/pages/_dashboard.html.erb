@@ -22,7 +22,7 @@
 
 
 
-      <div class="row">
+      <div class="dashboard-content row">
         <!--Applications-->
         <div class="col-md-8 applications-container">
           <!-- Pending Apps Header -->
@@ -32,50 +32,55 @@
           </div>
 
           <!-- Pending Apps -->
-          <div class="row">
+          <div class="pending-apps-content row">
             <% @requester = Requester.where(user_id: current_user.id)%>
-            <% for application in Application.where(requester_id: @requester)%>
-              <div class="notification_message">
-                <div class="col-lg-12">
-                    <h3><% concat application.conference_name %></h3>              
-                    <p>requester_id:<% concat application.requester_id %></p>
+            <% Application.where(requester_id: @requester).each do |application| %>
+              <div class="pending-apps-row">
+                <h3><% concat application.conference_name %></h3>              
+
+                <div class="col-lg-6">
                     <p>Application Number:<% concat application.id %></p>
                     <p>Conference Date:<% concat application.conference_date %></p> 
-                    <hr>
+                    <p>Total cost: $<% concat application.meals_cost %></p>
                 </div>
+                  <div class="col-lg-6">
+                    <p>Registration cost: <% concat application.registration_cost %></p>
+                    <p>Transportation cost <% concat application.transportation_cost %></p> 
+                    <p>Accomodation cost <% concat application.accomodation_cost %></p> 
+                    <p>Meal cost <% concat application.meals_cost %></p> 
+                </div>
+                <hr>
               </div>
             <% end %>
           </div>
         </div>
 
         <!--Messages/Notifications-->
-        <div class="col-md-4  notifications-container">
-          <div class="notifications-header row">
+        <div class="col-md-4 notifications-container">
+          <div class="notifications-header">
           <h2 class="col-title">Notifications</h2>
           </div>
 
-          <hr>
+          <div class="notifications-content">
+
 
           <% for application in Application.first(10) %>
 
-          <div class="notification_message">
-            <div class="col-lg-12">
-              <div class="col-lg-11">
-                <h3>Notification: Sample Notification</h3>              
-              </div>
-              <div class="col-lg-1">
-                <p> X </p>
-              </div>
-                <p>Application Number:<% concat application.id %></p>
-                <p>Conference Name:<% concat application.conference_name %></p>
-                <p>Conference Date:<% concat application.conference_date %></p> 
-                <hr>
+            <div class="notification-message">
+
+                  <h3>Notification Name</h3>              
+
+                  <p>Application Number:<% concat application.id %></p>
+                  <p>Conference Name:<% concat application.conference_name %></p>
+                  <p>Conference Date:<% concat application.conference_date %></p> 
+
             </div>
-          </div>
           
           <% end %>
+
+
+          </div>
         </div>
-          <!-- SAMPLE NOTIFICATION -->
           
 
 

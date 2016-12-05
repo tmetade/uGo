@@ -20,6 +20,10 @@ body{
     font-family: 'Raleway', sans-serif;
 }
 
+body, html{
+        height:100%;
+        overflow: hidden;
+}
 
 .container{
 		width:100%;
@@ -190,27 +194,15 @@ body{
 
 .applications-container{
     /*background-color: rgb(20, 40, 60);*/
-    height:500px;
     border-right-width: 1px;
     border-right-style: solid;
     border-right-color: #D3D3D3;
 }
 
-.notification_message {
-
-}
-.notification_message h3{
-    color:#787d84;
-    font-size: 14;
-}  
-
-.notification_message p{
-    color:#afb8c6;
-}   
 
 .notifications-container{
-    /*background-color: rgb(40,20,30);*/
-    height:500px;
+    margin-left: 0;
+    padding-left: 0;
 }
 
 .notifications-container, .applications-container{
@@ -264,6 +256,40 @@ body{
     border-bottom-style: solid;
     border-bottom-color: #D3D3D3;
 }
+
+.pending-apps-row{
+        border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #ededed;
+    height:160px;
+}
+
+.dashboard-content{
+    height: calc(100vh - 67px);
+}
+
+.pending-apps-content, .notifications-content{
+    overflow-y: scroll;
+    height: calc(100vh - 120px);
+
+}
+
+.notification-message{
+    height: 136px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #ededed;
+}
+
+.notification-message h3{
+    color:#787d84;
+    font-size: 14;
+}  
+
+.notification-message p{
+    color:#afb8c6;
+}   
+
 
 
 *= require bootstrap
