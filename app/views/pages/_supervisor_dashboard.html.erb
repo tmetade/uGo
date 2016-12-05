@@ -7,10 +7,16 @@
             <% end %>        
         
             <div class="header-link">
-              <div class="col-lg-6">
-                <h5><%= current_user.given_name %></h5>
+              <div class="col-lg-8">
+                <div class="col-md-6">
+                  <h5><%= current_user.role %></h5>
+                </div>              
+                <div class="col-md-6">
+                  <h5><%= current_user.given_name %></h5>
+                </div>
               </div>
-              <div class="col-lg-6">
+
+              <div class="col-lg-4">
                 <%= link_to'Logout', destroy_user_session_path, :method => :delete, class: 'btn btn-primary'  %>                
               </div>
 

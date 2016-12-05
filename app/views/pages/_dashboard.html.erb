@@ -45,9 +45,9 @@
                   </div>
                 </div>
                 <p>Status:<%  application.requester_id %></p>
-                <p>Application Number:<% concat application.application_number %></p>
-                <p>Conference Name:<% concat application.conference_name %></p>
-                <p>Conference Date:<% concat application.conference_date %></p> 
+                <p>Application Number: <% concat application.application_number %></p>
+                <p>Conference Name: <% concat application.conference_name %></p>
+                <p>Conference Date: <% concat application.conference_date %></p> 
                 <hr>
               </div>
             <% end %>
@@ -65,15 +65,15 @@
             <div class="notification_message">
               <div class="col-lg-12">
                 <div class="col-lg-11">
-                  <h3>Notification: Sample Notification</h3>              
+                  <h3>Notification: <% concat application.status %></h3>              
                 </div>
                 <div class="col-lg-1">
                   <p id="hide">X</p>
                 </div>
                 </div>
-                  <p>Application Number:<% concat application.application_number %></p>
-                  <p>Conference Name:<% concat application.conference_name %></p>
-                  <p>Conference Date:<% concat application.conference_date %></p> 
+                  <p>Application Number: <% concat application.application_number %></p>
+                  <p>Conference Name: <% concat application.conference_name %></p>
+                  <p>Conference Date: <% concat application.conference_date %></p> 
                   <hr>
               </div>
           <% end %>
