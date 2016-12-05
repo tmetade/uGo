@@ -16,4 +16,14 @@ class Application < ApplicationRecord
 	    end
     end
 
+    def total
+    	return (self.registration_cost + self.meals_cost + self.accomodation_cost + self.transportation_cost)
+    end
+
+    def student_name
+    	@requester = Requester.find_by(id: self.requester_id)
+    	@user = User.find_by(id: @requester.user_id)
+    	return [@user.given_name, @user.last_name].join(' ')
+    end
+
 end

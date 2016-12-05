@@ -40,7 +40,8 @@
                 <div class="pending-apps-row <%= application.recommendation %>">
                 <div class="conference-name-date col-md-9">
                     <p class="app-header"><% concat application.conference_name %></p>
-                    <p class="conference-date"><% concat application.conference_date.strftime("%b %d, %Y") %></p>
+                    <p class="student-name"><% concat application.student_name %></p>
+                    <p class="supervisor-conference-date"><% concat application.conference_date.strftime("%b %d, %Y") %></p>
 
                     
 
@@ -48,7 +49,7 @@
                 </div>
 
                 <div class="price-date-created col-md-3">
-                    <p class="total-cost">$<% concat application.meals_cost %></p>
+                    <p class="total-cost">$<% concat application.total %></p>
                     <p class="date-created">Created on <% concat application.created_at.strftime("%b %d, %Y") %></p>
 
                 </div>
