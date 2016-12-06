@@ -10,9 +10,13 @@ class ApplicationsController < ApplicationController
   def create
      @application = Application.new(secure_params)
 
-     @application.requester_id = Requester.find_by(user_id: current_user.id).id
-     
+     @requester = Requester.find_by(user_id: current_user.id)
+
+     @application.requester_id = @requester.id
+
     if @application.save 
+      @notification = Notification.create({title: 1, requester_id: @requester.id, supervisor_id: @requester.supervisor_id, application_id: @application.id, supervisor_show: true, requester_show: true})
+
       redirect_to root_path
     else
       render ("new")
