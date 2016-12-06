@@ -284,21 +284,26 @@ height: 98px;
 
 
 .notification-message{
-    height: 146px;
+    height: 130px;
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: #ededed;
 }
 
-.notification-message h3{
+.notification-message > .notification-title{
     color:#787d84;
-    font-size: 14;
+    font-size: 18px;
+    margin-top: 10px;
+    display: inline-block;
 }  
 
 .notification-message p{
     color:#afb8c6;
 }   
 
+.small-notification-message{
+    height:100px !important;
+}
 
 .close-notification{
     float:right;

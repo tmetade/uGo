@@ -71,21 +71,25 @@
 
           <div class="notifications-content">
 
+          <% requester = Requester.where(user_id: current_user.id)%>
+          <% for notification in Notification.where(requester_id: requester).reverse_order %>
+            <% if notification.requester_show %>
+                <% application = Application.find_by(id: notification.application_id) %>
 
-          <% for application in Application.first(10) %>
+                <div class="notification-message small-notification-message">
 
-                <div class="notification-message">
+                      <p class="notification-title">
+                        <%=notification.getNotificationNameForRequester%>
+                      </p>
 
-                      <h3 style="display:inline-block;">Notification Name</h3>
-
-                      <%= link_to image_tag("remove.svg", class: 'close-notification'), controller: "pages", action: "delete_notification", id: application.id%> 
+                      <%= link_to image_tag("remove.svg", class: 'close-notification'), controller: "pages", action: "delete_notification"%> 
       
 
-                      <p>Application Number:<% concat application.id %></p>                      
-                      <p>Conference Name:<% concat application.conference_name %></p>
-                      <p>Conference Date:<% concat application.conference_date %></p> 
+                      <p>Conference Name: <% concat application.conference_name %></p>
+                      <p>Conference Date: <% concat application.conference_date.strftime("%b %d, %Y") %></p> 
 
                 </div>
+            <% end %>
           <% end %>
 
 
