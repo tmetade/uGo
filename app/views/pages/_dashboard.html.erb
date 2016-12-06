@@ -37,19 +37,21 @@
             <% for application in Application.where(requester_id: @requester)%>
 
 
+
             <%= link_to controller: "applications", action: "requester_show", id: application.id do%>
               <div class="pending-apps-row <%= application.recommendation %>">
                 <div class="conference-name-date col-md-9">
                     <p class="app-header"><% concat application.conference_name %></p>
-                    <p class="conference-date"><% concat application.conference_date.strftime("%b %d, %Y") %></p>
-
-                    
+                    <p class="conference-date">
+                    <% concat application.conference_date.strftime("%b %d, %Y")%>
+                    (<% concat application.days_until%> days left) 
+                    </p>
 
 
                 </div>
 
                 <div class="price-date-created col-md-3">
-                    <p class="total-cost">$<% concat application.meals_cost %></p>
+                    <p class="total-cost">$<% concat application.total %></p>
                     <p class="date-created">Created on <% concat application.created_at.strftime("%b %d, %Y") %></p>
 
                 </div>
@@ -72,20 +74,18 @@
 
           <% for application in Application.first(10) %>
 
-            <div class="notification-message">
-                <div class="col-lg-11">
-                  <h3>Notification Name</h3>             
+                <div class="notification-message">
 
-                  <p>Application Number:<% concat application.id %></p>
-                  <p>Conference Name:<% concat application.conference_name %></p>
-                  <p>Conference Date:<% concat application.conference_date %></p> 
+                      <h3 style="display:inline-block;">Notification Name</h3>
+
+                      <%= link_to image_tag("remove.svg", class: 'close-notification'), controller: "pages", action: "delete_notification", id: application.id%> 
+      
+
+                      <p>Application Number:<% concat application.id %></p>                      
+                      <p>Conference Name:<% concat application.conference_name %></p>
+                      <p>Conference Date:<% concat application.conference_date %></p> 
+
                 </div>
-              <div class="col-lg-1">
-                <p id="hide"><a>X</a></p>
-              </div>
-            </div>
-
-          
           <% end %>
 
 

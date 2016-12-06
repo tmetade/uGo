@@ -328,6 +328,12 @@ height: 98px;
     margin-top: 37px;
 }
 
+.supervisor-conference-date{
+    margin-top: 57px;
+    margin-left: 35px;
+    position: absolute;
+}
+
 .conference-date, .app-header{
     float: left;
 
@@ -358,6 +364,13 @@ height: 98px;
 
 .pending{
     background-color: #ffffcc;
+}
+
+.student-name{
+    float: left;
+    margin-left: 35px;
+    position: absolute;
+    margin-top: 37px;
 }
 
 
