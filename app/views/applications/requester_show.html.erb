@@ -12,7 +12,7 @@
 
       <div class="row-fluid new-application">
 
-      <h1 class="page-title">Application <% @application.id%></h1>
+      <h1 class="page-title">Application</h1>
 
 
 
@@ -38,25 +38,54 @@
 
           <div class="create-app-form-right col-md-6 col-md-pull-1">
 
-            <div>
-             <strong>Registration Cost: </strong><br>
-              <p>$<%= @application.registration_cost %></p>
-            </div>
-            <div>
-             <strong>Transportation Cost: </strong><br>
-              <p>$<%= @application.transportation_cost %></p>
-            </div>
-            <div>
-             <strong>Accomodation Cost: </strong><br>
-              <p>$<%= @application.accomodation_cost %></p>
-            </div>
-           <div>
-             <strong>Meals cost: </strong><br>
-              <p>$<%= @application.meals_cost %></p>
-            </div>
+              <div>
+               <strong>Registration Cost: </strong><br>
+                <p>$<%= @application.registration_cost %></p>
+              </div>
+              <div>
+               <strong>Transportation Cost: </strong><br>
+                <p>$<%= @application.transportation_cost %></p>
+              </div>
+              <div>
+               <strong>Accomodation Cost: </strong><br>
+                <p>$<%= @application.accomodation_cost %></p>
+              </div>
+             <div>
+               <strong>Meals cost: </strong><br>
+                <p>$<%= @application.meals_cost %></p>
+              </div>
           </div>
 
-          <%= link_to 'Back', root_path, class: 'btn btn-primary' %>
+          <div class="row update">
+            <% recommendation = Recommendation.find_by(application_id: @application.id) %>
+            
+            <% if @application.recommendation == "approved" %>
+              <p class="application-status-message approved-message">APPROVED</p>
+              <p>Congrats! Your application has been approved! Start packing your bags!</p>
+              <br>
+              <p>Your supervisor's comments:</p>
+              <%= recommendation.comments %>
+
+
+            <% elsif @application.recommendation == "declined" %>
+              <p class="application-status-message declined-message">DECLINED</p>
+              <p>Uh oh.. your application has been rejected :( <br>Try editing and resubmitting your application based on the comments your supervisor has left for you.</p>
+              <br>
+              <p>Your supervisor's comments:</p>
+              <%= recommendation.comments %>
+
+
+            <% else %>
+              <p class="application-status-message pending-message">PENDING</p>
+              <p>Hol' up, we just need a bit more time to get your application checked!</p>
+            <% end %>
+          </div>
+
+          <%= link_to 'Back', root_path, class: 'btn btn-primary back' %>
+
+          <% if @application.recommendation == "declined"%>
+          <%= link_to 'Edit', edit_application_path(@application), class: 'btn btn-primary back' %>
+          <% end %>
       </div>
 </div>
 
