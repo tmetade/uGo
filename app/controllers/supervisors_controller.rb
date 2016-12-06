@@ -23,6 +23,13 @@ class SupervisorsController < ApplicationController
     @supervisor = Supervisor.find(params[:id])
   end
 
+  def delete_notification
+    notif = Notification.find(params[:id])
+    notif.supervisor_show = false
+    notif.save
+    redirect_to root_path
+  end
+
   private
 
   def secure_params

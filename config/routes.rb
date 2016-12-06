@@ -27,6 +27,8 @@ Rails.application.routes.draw do
         get '/new' => 'requesters#new'
         post '/new' => 'requesters#create'
         get '/application/:id' => 'applications#requester_show'
+        get '/delete_notification/:id' => 'requesters#delete_notification'
+
     end
 
     resources :supervisors
@@ -34,10 +36,8 @@ Rails.application.routes.draw do
       get '/new' => 'supervisors#new'
       post '/new' => 'supervisors#create'
       get '/application/:id' => 'applications#supervisor_show'
+      get '/delete_notification/:id' => 'supervisors#delete_notification'
     end
-
-    get '/home' =>'pages#_supervisor_dashboard'
-    get '/delete' => 'pages#delete_notification'
 
 
 
