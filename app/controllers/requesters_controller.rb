@@ -28,6 +28,13 @@ class RequestersController < ApplicationController
     @requester = Requester.find(params[:id])
   end
 
+  def delete_notification
+    notif = Notification.find(params[:id])
+    notif.requester_show = false
+    notif.save
+    redirect_to root_path
+  end
+
   private
 
   def secure_params

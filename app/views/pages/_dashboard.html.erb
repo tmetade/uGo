@@ -82,7 +82,7 @@
                         <%=notification.getNotificationNameForRequester%>
                       </p>
 
-                      <%= link_to image_tag("remove.svg", class: 'close-notification'), controller: "pages", action: "delete_notification"%> 
+                      <%= link_to image_tag("remove.svg", class: 'close-notification'), controller: "requesters", action: "delete_notification", id: notification.id%> 
       
 
                       <p>Conference Name: <% concat application.conference_name %></p>

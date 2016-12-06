@@ -8,10 +8,6 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-	  if resource.role == "Requester"
-	  	 	return root_path
-	  	elsif resource.role == "Supervisor"
-	  		return home_path
-	  end 
+	  	return root_path
   end
 end
