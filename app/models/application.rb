@@ -26,4 +26,11 @@ class Application < ApplicationRecord
     	return [@user.given_name, @user.last_name].join(' ')
     end
 
+    def days_until
+	    current_date = Date.today
+        conference_date = self.conference_date
+        days_until = (conference_date - current_date).to_i
+    end
+
+
 end

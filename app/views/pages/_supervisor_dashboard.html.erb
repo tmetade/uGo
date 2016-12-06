@@ -41,7 +41,10 @@
                 <div class="conference-name-date col-md-9">
                     <p class="app-header"><% concat application.conference_name %></p>
                     <p class="student-name"><% concat application.student_name %></p>
-                    <p class="supervisor-conference-date"><% concat application.conference_date.strftime("%b %d, %Y") %></p>
+                    <p class="supervisor-conference-date">
+                    <% concat application.conference_date.strftime("%b %d, %Y") %>
+                    (<% concat application.days_until%> days left) 
+                    </p>
 
                     
 
