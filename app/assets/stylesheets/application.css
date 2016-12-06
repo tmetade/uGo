@@ -378,5 +378,17 @@ height: 98px;
     margin-top: 37px;
 }
 
+.back{
+
+}
+
+.evaluate{
+    margin-left:40px;
+}  
+
+.back, .evaluate{
+    margin-top:20px;
+}
+
 
 *= require bootstrap
