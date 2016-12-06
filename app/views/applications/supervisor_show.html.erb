@@ -30,10 +30,8 @@
             </div>
             <div>
              <strong>Conference Date: </strong><br>
-              <p><%= @application.conference_date %></p>
+              <p><%= @application.conference_date.strftime("%b %d, %Y") %></p>
             </div>
-            <%= link_to 'Back', home_path, class: 'btn btn-primary' %>
-
           </div>
 
 
@@ -41,22 +39,29 @@
 
             <div>
              <strong>Registration Cost: </strong><br>
-              <p><%= @application.registration_cost %></p>
+              <p>$<%= @application.registration_cost %></p>
             </div>
             <div>
              <strong>Transportation Cost: </strong><br>
-              <p><%= @application.transportation_cost %></p>
+              <p>$<%= @application.transportation_cost %></p>
             </div>
             <div>
              <strong>Accomodation Cost: </strong><br>
-              <p><%= @application.accomodation_cost %></p>
+              <p>$<%= @application.accomodation_cost %></p>
             </div>
            <div>
              <strong>Meals cost: </strong><br>
-              <p><%= @application.meals_cost %></p>
+              <p>$<%= @application.meals_cost %></p>
             </div>
-            <%= link_to 'Create Recommendation', new_recommendation_path(:application_id => @application.id), class: 'btn btn-primary'%>
+          </div>  
+
+          <div class="row-buttons">
+
+          <%= link_to 'Back', root_path, class: 'btn btn-primary back' %>
+          <%= link_to 'Evaluate', new_recommendation_path(:application_id => @application.id), class: 'btn btn-primary evaluate'%>
+
           </div>
+
       </div>
 </div>
 

@@ -35,7 +35,7 @@
 
             <% @supervisor = Supervisor.find_by(user_id: current_user.id)%>
             <% @requester = Requester.where(supervisor_id: @supervisor)%>
-            <% for application in Application.where(requester_id: @requester)%>
+            <% for application in Application.where(requester_id: @requester).reverse_order %>
               <%= link_to controller: "applications", action: "supervisor_show", id: application.id do%>
                 <div class="pending-apps-row <%= application.recommendation %>">
                 <div class="conference-name-date col-md-9">

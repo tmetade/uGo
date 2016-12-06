@@ -25,7 +25,7 @@ def index
       elsif @recommendation.application_status == 1 #approved
         @notification = Notification.create({title: 2, requester_id: @requester.id, supervisor_id: @supervisor.id, application_id: @recommendation.application_id, supervisor_show: true, requester_show: true})
       end
-      redirect_to home_path
+      redirect_to root_path
     else
       render ("new")
     end

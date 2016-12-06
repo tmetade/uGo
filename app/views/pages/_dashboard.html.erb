@@ -34,7 +34,7 @@
           <!-- Pending Apps -->
           <div class="pending-apps-content row">
             <% @requester = Requester.where(user_id: current_user.id)%>
-            <% for application in Application.where(requester_id: @requester)%>
+            <% for application in Application.where(requester_id: @requester).reverse_order%>
 
 
 
