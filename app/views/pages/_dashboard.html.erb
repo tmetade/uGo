@@ -72,7 +72,7 @@
             <div class="notification-message">
 
                   <h3>Notification Name</h3>              
-
+                    <%= link_to 'X', controller: "pages", action: "delete_notification_requester", id: application.id %> 
                   <p>Application Number:<% concat application.id %></p>
                   <p>Conference Name:<% concat application.conference_name %></p>
                   <p>Conference Date:<% concat application.conference_date %></p> 

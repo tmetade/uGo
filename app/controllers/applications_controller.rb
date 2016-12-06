@@ -12,6 +12,7 @@ class ApplicationsController < ApplicationController
 
      @application.requester_id = Requester.find_by(user_id: current_user.id).id
       @application.notifysupervisor = true
+      @application.notifyrequester = true
      
     if @application.save 
       @recommendation = Recommendation.create({:application_id => @application.id, :application_status => 0})

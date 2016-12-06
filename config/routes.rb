@@ -37,7 +37,8 @@ Rails.application.routes.draw do
     end
 
     get '/home' =>'pages#_supervisor_dashboard'
-    get '/delete' => 'pages#delete_notification'
+    get '/deleter' => 'pages#delete_notification_requester'
+    get '/deletes' => 'pages#delete_notification_supervisor'
 
 
 
