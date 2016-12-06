@@ -378,10 +378,6 @@ height: 98px;
     margin-top: 37px;
 }
 
-.back{
-
-}
-
 .evaluate{
     margin-left:40px;
 }  
@@ -390,5 +386,21 @@ height: 98px;
     margin-top:20px;
 }
 
+.application-status-message{
+    font-size:20px;
+}
+
+.pending-message{
+    color: #ffff00;
+
+}
+
+.approved-message{
+    color: #008000;
+}
+
+.declined-message{
+    color: #ff0000;
+}
 
 *= require bootstrap

@@ -9,5 +9,14 @@ class User < ApplicationRecord
      	return self.role      	
      end 
 
+     def actual_id
+     	if self.type == "Supervisor"
+     		return Supervisor.find_by(user_id: self.id)
+     	elsif self.type == "Requester"
+     		return Requester.find_by(user_id: self.id)
+     	end
+
+     end
+
 
 end
