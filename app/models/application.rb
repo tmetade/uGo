@@ -3,7 +3,6 @@ class Application < ApplicationRecord
 	belongs_to :requester
     validates :conference_name, :conference_location, presence: true, format: { with: /\A[a-zA-Z]+\z/}
     validates :conference_date, presence: true
-
 	
 	def recommendation
 	    if Recommendation.exists?(:application_id => self.id)

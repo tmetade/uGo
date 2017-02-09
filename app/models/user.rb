@@ -6,7 +6,6 @@ class User < ApplicationRecord
 
          validates :given_name, :last_name, presence: true, format: { with: /\A[a-zA-Z]+\z/}
 
-
      def type
      	return self.role      	
      end 
