@@ -1,19 +1,11 @@
 <% content_for :top_content do %>
-		
-			  <% if current_user != nil %>	
-				  <% if current_user.type == "Requester" %>
-
-	                <%= render "dashboard" %>
-
-				  <% elsif current_user.type == "Supervisor" %>
-
-				  	<%= render "supervisor_dashboard" %>
-
-				  <% end %>
-              <% else %>
-
-                <%= render "splash" %>
-
-              <% end %>
-
+	<% if current_user != nil %>	
+		<% if current_user.type == "Requester" %>
+	        <%= render "dashboard" %>
+		<% elsif current_user.type == "Supervisor" %>
+			<%= render "supervisor_dashboard" %>
+		<% end %>
+    <% else %>
+        <%= render "splash" %>
+    <% end %>
 <% end %>

@@ -1,34 +1,26 @@
 <div class="supervisor-dashboard-container container">
-      <div class="row-fluid">
-        <div class="header">
-
-            <%= link_to root_path do %>
-              <%= image_tag "header.png", id:"header-logo" %>
-            <% end %>        
-        
-            <div class="header-link">
-              <div class="col-lg-6">
-                <h5><%= current_user.given_name %></h5>
-              </div>
-              <div class="col-lg-6">
-                <%= link_to'Logout', destroy_user_session_path, :method => :delete, class: 'btn btn-primary'  %>                
-              </div>
-
-            </div>
-
-
+  <div class="row-fluid">
+    <div class="header">
+      <%= link_to root_path do %>
+        <%= image_tag "header.png", id:"header-logo" %>
+      <% end %>        
+      <div class="header-link">
+        <div class="col-lg-6">
+          <h5><%= current_user.given_name %></h5>
+        </div>
+        <div class="col-lg-6">
+          <%= link_to'Logout', destroy_user_session_path, :method => :delete, class: 'btn btn-primary'  %>                
         </div>
       </div>
-
-
-
-      <div class="row">
-        <!--Applications-->
-        <div class="col-md-8 applications-container">
-          <!-- Pending Apps Header -->
-          <div class="pending-apps-header row">
-            <p class="col-title pending-apps">View Applications</p>
-          </div>
+    </div>
+  </div>
+  <div class="row">
+    <!--Applications-->
+    <div class="col-md-8 applications-container">
+      <!-- Pending Apps Header -->
+      <div class="pending-apps-header row">
+        <p class="col-title pending-apps">View Applications</p>
+      </div>
 
           <!-- Pending Apps -->
           <div class="pending-apps-content row">
