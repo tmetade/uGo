@@ -2,15 +2,13 @@
   <% if recommendation.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(recommendation.errors.count, "error") %> prohibited this recommendation from being saved:</h2>
-
       <ul>
-      <% recommendation.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% recommendation.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
-
   <div class="actions">
     <%= f.submit %>
   </div>

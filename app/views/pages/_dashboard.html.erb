@@ -1,102 +1,71 @@
 <div class="dashboard-container container">
-      <div class="row-fluid">
-        <div class="header">
-
-            <%= link_to root_path do %>
-              <%= image_tag "header.png", id:"header-logo" %>
-            <% end %>        
-        
-            <div class="header-link">
-              <div class="col-lg-6">
-                <h5><%= current_user.given_name %></h5>
-              </div>
-              <div class="col-lg-6">
-                <%= link_to'Logout', destroy_user_session_path, :method => :delete, class: 'btn btn-primary'  %>                
-              </div>
-
-            </div>
-
-
+  <div class="row-fluid">
+    <div class="header">
+      <%= link_to root_path do %>
+        <%= image_tag "header.png", id:"header-logo" %>
+      <% end %>        
+      <div class="header-link">
+        <div class="col-lg-6">
+          <h5><%= current_user.given_name %></h5>
+        </div>
+        <div class="col-lg-6">
+          <%= link_to'Logout', destroy_user_session_path, :method => :delete, class: 'btn btn-primary'  %>                
         </div>
       </div>
-
-
-
-      <div class="dashboard-content row">
-        <!--Applications-->
-        <div class="col-md-8 applications-container">
-          <!-- Pending Apps Header -->
-          <div class="pending-apps-header row">
-            <p class="col-title pending-apps">Pending Applications </p>
-            <%= link_to "+", new_application_path, class: 'add-application' %>
-          </div>
-
-          <!-- Pending Apps -->
-          <div class="pending-apps-content row">
-            <% @requester = Requester.where(user_id: current_user.id)%>
-            <% for application in Application.where(requester_id: @requester).reverse_order%>
-
-
-
+    </div>
+  </div>
+  <div class="dashboard-content row">
+    <!--Applications-->
+    <div class="col-md-8 applications-container">
+      <!-- Pending Apps Header -->
+      <div class="pending-apps-header row">
+        <p class="col-title pending-apps">Pending Applications </p>
+        <%= link_to "+", new_application_path, class: 'add-application' %>
+      </div>
+      <!-- Pending Apps -->
+      <div class="pending-apps-content row">
+        <% @requester = Requester.where(user_id: current_user.id)%>
+          <% for application in Application.where(requester_id: @requester).reverse_order%>
             <%= link_to controller: "applications", action: "requester_show", id: application.id do%>
-              <div class="pending-apps-row <%= application.recommendation %>">
-                <div class="conference-name-date col-md-9">
-                    <p class="app-header"><% concat application.conference_name %></p>
-                    <p class="conference-date">
-                    <% concat application.conference_date.strftime("%b %d, %Y")%>
-                    (<% concat application.days_until%> days left) 
-                    </p>
-
-
-                </div>
-
-                <div class="price-date-created col-md-3">
-                    <p class="total-cost">$<% concat application.total %></p>
-                    <p class="date-created">Created on <% concat application.created_at.strftime("%b %d, %Y") %></p>
-
-                </div>
-
-                <hr>
+            <div class="pending-apps-row <%= application.recommendation %>">
+              <div class="conference-name-date col-md-9">
+                <p class="app-header"><% concat application.conference_name %></p>
+                <p class="conference-date">
+                  <% concat application.conference_date.strftime("%b %d, %Y")%>
+                  (<% concat application.days_until%> days left) 
+                </p>
               </div>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
-
-        <!--Messages/Notifications-->
-        <div class="col-md-4 notifications-container">
-          <div class="notifications-header">
-          <p class="col-title">Notifications</p>
-          </div>
-
-          <div class="notifications-content">
-
-          <% requester = Requester.where(user_id: current_user.id)%>
-          <% for notification in Notification.where(requester_id: requester).reverse_order %>
-            <% if notification.requester_show %>
-                <% application = Application.find_by(id: notification.application_id) %>
-
-                <div class="notification-message small-notification-message">
-
-                      <p class="notification-title">
-                        <%=notification.getNotificationNameForRequester%>
-                      </p>
-
-                      <%= link_to image_tag("remove.svg", class: 'close-notification'), controller: "requesters", action: "delete_notification", id: notification.id%> 
-      
-
-                      <p>Conference Name: <% concat application.conference_name %></p>
-                      <p>Conference Date: <% concat application.conference_date.strftime("%b %d, %Y") %></p> 
-
-                </div>
-            <% end %>
+              <div class="price-date-created col-md-3">
+                <p class="total-cost">$<% concat application.total %></p>
+                <p class="date-created">Created on <% concat application.created_at.strftime("%b %d, %Y") %></p>
+              </div>
+              <hr>
+            </div>
           <% end %>
-
-
-          </div>
-        </div>
-          
-
-
+        <% end %>
       </div>
+    </div>
+    <!--Messages/Notifications-->
+    <div class="col-md-4 notifications-container">
+      <div class="notifications-header">
+        <p class="col-title">Notifications</p>
+      </div>
+      <div class="notifications-content">
+        <% requester = Requester.where(user_id: current_user.id)%>
+        <% for notification in Notification.where(requester_id: requester).reverse_order %>
+          <% if notification.requester_show %>
+            <% application = Application.find_by(id: notification.application_id) %>
+            <div class="notification-message small-notification-message">
+              <p class="notification-title">
+                <%=notification.getNotificationNameForRequester%>
+              </p>
+              <%= link_to image_tag("remove.svg", class: 'close-notification'), controller: "requesters", action: "delete_notification", id: notification.id%>
+              <p>Conference Name: <% concat application.conference_name %></p>
+              <p>Conference Date: <% concat application.conference_date.strftime("%b %d, %Y") %></p> 
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

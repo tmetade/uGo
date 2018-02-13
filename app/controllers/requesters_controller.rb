@@ -11,10 +11,10 @@ class RequestersController < ApplicationController
 
   def create
     @supervisor = User.where(role: "Supervisor")
-     @requester = Requester.new(secure_params)
-     @requester.user_id = current_user.id
-     @passed_supervisor = params["requester"][:supervisor]
-     @requester.supervisor_id = Supervisor.find_by(user_id: @passed_supervisor).id 
+    @requester = Requester.new(secure_params)
+    @requester.user_id = current_user.id
+    @passed_supervisor = params["requester"][:supervisor]
+    @requester.supervisor_id = Supervisor.find_by(user_id: @passed_supervisor).id 
 
     if @requester.save
       redirect_to root_path
