@@ -33,6 +33,4 @@ class Application < ApplicationRecord
         conference_date = self.conference_date
         days_until = (conference_date - current_date).to_i
     end
-
-
 end

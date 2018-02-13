@@ -83,8 +83,6 @@ body, html{
     height: 67px;
 }
 
-
-
 .header-link{
 	float: right;
     margin-top: 18px;
@@ -402,5 +400,3 @@ height: 98px;
 .declined-message{
     color: #ff0000;
 }
-
-*= require bootstrap

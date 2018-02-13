@@ -35,5 +35,4 @@ class ApplicationsController < ApplicationController
     	 :conference_location, :registration_cost, :transportation_cost, :accomodation_cost,
     	:meals_cost)
   end
-
 end

@@ -21,71 +21,51 @@
       <div class="pending-apps-header row">
         <p class="col-title pending-apps">View Applications</p>
       </div>
-
-          <!-- Pending Apps -->
-          <div class="pending-apps-content row">
-
-            <% @supervisor = Supervisor.find_by(user_id: current_user.id)%>
-            <% @requester = Requester.where(supervisor_id: @supervisor)%>
-            <% for application in Application.where(requester_id: @requester).reverse_order %>
-              <%= link_to controller: "applications", action: "supervisor_show", id: application.id do%>
-                <div class="pending-apps-row <%= application.recommendation %>">
-                <div class="conference-name-date col-md-9">
-                    <p class="app-header"><% concat application.conference_name %></p>
-                    <p class="student-name"><% concat application.student_name %></p>
-                    <p class="supervisor-conference-date">
-                    <% concat application.conference_date.strftime("%b %d, %Y") %>
-                    (<% concat application.days_until%> days left) 
-                    </p>
-
-                    
-
-
-                </div>
-
-                <div class="price-date-created col-md-3">
-                    <p class="total-cost">$<% concat application.total %></p>
-                    <p class="date-created">Created on <% concat application.created_at.strftime("%b %d, %Y") %></p>
-
-                </div>
-               </div>
-                <% end %>
-              <% end %>
-          </div>
-        </div>
-
-        <!--Messages/Notifications-->
-        <div class="col-md-4  notifications-container">
-          <div class="notifications-header">
-          <p class="col-title">Notifications</p>
-          </div>
-
-
-          <div class="notifications-content">
-          <% for notification in Notification.where(supervisor_id: @supervisor).reverse_order %>
-            <% if notification.supervisor_show %>
-                <% application = Application.find_by(id: notification.application_id) %>
-
-                <div class="notification-message">
-
-                      <p class="notification-title">
-                      <%=notification.getNotificationNameForSupervisor%>
-                      </p>
-
-                      <%= link_to image_tag("remove.svg", class: 'close-notification'), controller: "supervisors", action: "delete_notification", id: notification.id%> 
-      
-
-                      <p>Student Name: <% concat application.student_name  %></p>                      
-                      <p>Conference Name: <% concat application.conference_name %></p>
-                      <p>Conference Date: <% concat application.conference_date.strftime("%b %d, %Y") %></p> 
-
-                </div>
-              <% end %>
-              <% end %>
-
+      <!-- Pending Apps -->
+      <div class="pending-apps-content row">
+        <% @supervisor = Supervisor.find_by(user_id: current_user.id)%>
+        <% @requester = Requester.where(supervisor_id: @supervisor)%>
+        <% for application in Application.where(requester_id: @requester).reverse_order %>
+          <%= link_to controller: "applications", action: "supervisor_show", id: application.id do%>
+            <div class="pending-apps-row <%= application.recommendation %>">
+              <div class="conference-name-date col-md-9">
+                <p class="app-header"><% concat application.conference_name %></p>
+                <p class="student-name"><% concat application.student_name %></p>
+                <p class="supervisor-conference-date">
+                  <% concat application.conference_date.strftime("%b %d, %Y") %>
+                      (<% concat application.days_until%> days left) 
+                </p>
+              </div>
+              <div class="price-date-created col-md-3">
+                <p class="total-cost">$<% concat application.total %></p>
+                <p class="date-created">Created on <% concat application.created_at.strftime("%b %d, %Y") %></p>
+              </div>
             </div>
-
-        </div>
-          
+          <% end %>
+        <% end %>
       </div>
+    </div>
+    <!--Messages/Notifications-->
+    <div class="col-md-4  notifications-container">
+      <div class="notifications-header">
+        <p class="col-title">Notifications</p>
+      </div>
+      <div class="notifications-content">
+        <% for notification in Notification.where(supervisor_id: @supervisor).reverse_order %>
+          <% if notification.supervisor_show %>
+            <% application = Application.find_by(id: notification.application_id) %>
+            <div class="notification-message">
+              <p class="notification-title">
+                <%=notification.getNotificationNameForSupervisor%>
+              </p>
+               <%= link_to image_tag("remove.svg", class: 'close-notification'), controller: "supervisors", action: "delete_notification", id: notification.id%> 
+              <p>Student Name: <% concat application.student_name  %></p>
+              <p>Conference Name: <% concat application.conference_name %></p>
+              <p>Conference Date: <% concat application.conference_date.strftime("%b %d, %Y") %></p> 
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>  
+  </div>
 </div>
